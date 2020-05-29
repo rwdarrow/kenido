@@ -1,23 +1,32 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import {
   HeaderContainer,
-  BarsButton,
+  MenuButton,
   LogoContainer,
   LeftContentContainer,
-  RightContentContainer
+  RightContentContainer,
+  ShoppingBagContainer,
+  ItemCountContainer
 } from "./header.styles";
 
-const Header = () => (
+const Header = ({ itemCount }) => (
   <HeaderContainer>
     <LeftContentContainer>
-      <BarsButton />
+      <MenuButton />
       <LogoContainer to="/">KENIDO</LogoContainer>
     </LeftContentContainer>
     <RightContentContainer>
-
+      <ShoppingBagContainer />
+      <ItemCountContainer>{itemCount}</ItemCountContainer>
     </RightContentContainer>
   </HeaderContainer>
 );
+
+Header.propTypes = {
+  language: PropTypes.string.isRequired,
+  itemCount: PropTypes.number.isRequired
+};
 
 export default Header;

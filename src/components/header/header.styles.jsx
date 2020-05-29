@@ -2,8 +2,9 @@ import styled from "styled-components"
 import { Link } from "react-router-dom"
 
 import { Menu } from "@styled-icons/material"
+import { ShoppingBag } from "@styled-icons/feather/ShoppingBag"
 
-const KN_RED = "#9b0000"
+import { KN_RED } from "../../assets/style-constants"
 
 export const HeaderContainer = styled.div`
   height: 70px;
@@ -13,35 +14,53 @@ export const HeaderContainer = styled.div`
   margin: 25px 0 25px 0;
 `;
 
-export const LeftContentContainer = styled.span`
+export const LeftContentContainer = styled.div`
   height: 100%;
   width: 468px;
   float: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
   background-color: ${KN_RED};
 `
 
-export const BarsButton = styled(Menu)`
-  height: 50px;
-  width: 50px;
+export const MenuButton = styled(Menu)`
+  height: 100%;
   color: white;
   cursor: pointer;
   background-color: transparent;
-  padding: 5px 5px 5px 5px
 `;
 
 export const LogoContainer = styled(Link)`
   font-family: "Times New Roman";
   font-weight: bold;
-  font-size: 74px;
+  font-size: 65px;
   text-decoration: none;
   color: white;
-  padding: 25px 5px 5px 5px;
+  position: relative;
   cursor: pointer;
 `
 
-export const RightContentContainer = styled.span`
+export const RightContentContainer = styled.div`
   height: 100%;
-  width: 255px;
+  width: 140px;
   float: right;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor: pointer;
   background-color: ${KN_RED};
+`
+
+export const ShoppingBagContainer = styled(ShoppingBag)`
+  height: 70%;
+  color: white;
+  background-color: transparent;
+`
+
+export const ItemCountContainer = styled.span`
+  font-family: "Prata";
+  font-size: 25px;
+  color: white;
+  display: ${props => props.itemCount > 0 ? 'inline' : 'none' };
 `
