@@ -3,18 +3,21 @@ import { createGlobalStyle } from "styled-components"
 export const GlobalStyle = createGlobalStyle`
   body {
     font-family: "Prata";
+  }
 
-    @media screen and (max-width: 800px) {
-      padding: 10px;
-    }
+  button {
+    font-family: "Prata";
+    border:none;
+    outline:none;
+    border-radius: 0px;
   }
 
   a {
     text-decoration: none;
-    color: black;
   }
 
   * {
     box-sizing: border-box;
+    color: white;
   }
 `

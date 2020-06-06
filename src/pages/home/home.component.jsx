@@ -1,13 +1,7 @@
-import React from 'react'
+import React from "react";
 
-import Slideshow from "../../components/slideshow/slideshow.component"
+import Slideshow from "../../components/slideshow/slideshow.component";
 
-import { HomeContainer } from "./home.styles"
-
-const Home = () => (
-  <HomeContainer>
-    <Slideshow />
-  </HomeContainer>
-)
+const Home = () => <Slideshow />;
 
 export default Home;

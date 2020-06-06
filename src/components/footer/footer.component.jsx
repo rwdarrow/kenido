@@ -8,7 +8,7 @@ import {
 } from "./footer.styles";
 
 const Footer = () => {
-  const [hidden, setHidden] = useState(false);
+  const [hidden, setHidden] = useState(true);
 
   return (
     <FooterContainer>

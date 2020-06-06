@@ -1,26 +1,42 @@
-import React from 'react';
+import React from "react";
 import { Switch, Route } from "react-router-dom";
+import { renderToStaticMarkup } from "react-dom/server";
+import { withLocalize } from "react-localize-redux";
 
 import { GlobalStyle } from "./global.styles";
 
-import Header from "./components/header/header.component"
-import Footer from "./components/footer/footer.component"
+import Header from "./components/header/header.component";
+import Footer from "./components/footer/footer.component";
 
-import Home from "./pages/home/home.component"
+import Home from "./pages/home/home.component";
+import NotFound from "./pages/not-found/not-found.component";
 
-import './App.css';
+class App extends React.Component {
+  constructor(props) {
+    super(props);
 
-const App = () => {
-  return (
-    <div style={{ backgroundColor: "transparent" }}>
-      <GlobalStyle />
-      <Header />
-      <Switch>
-        <Route exact path="/" component={Home} />
-      </Switch>
-      <Footer />
-    </div>
-  )
+    this.props.initialize({
+      languages: [
+        { name: "English", code: "en" },
+        { name: "Deutsch", code: "de" },
+      ],
+      options: { renderToStaticMarkup },
+    });
+  }
+
+  render() {
+    return (
+      <>
+        <GlobalStyle />
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route component={NotFound} />
+        </Switch>
+        <Footer />
+      </>
+    );
+  }
 }
 
-export default App;
+export default withLocalize(App);
