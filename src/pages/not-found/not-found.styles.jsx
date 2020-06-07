@@ -5,6 +5,8 @@ export const ImageContainer = styled.div`
   background-size: cover;
   background-position: center 25%;
   background-image: url("https://firebasestorage.googleapis.com/v0/b/kenido-db.appspot.com/o/not-found-background.jpg?alt=media&token=ba62a109-0d40-4aed-bda1-f96325d5bb2a");
+  position: absolute;
+  width: 100vw;
 
   display: flex;
   justify-content: center;
