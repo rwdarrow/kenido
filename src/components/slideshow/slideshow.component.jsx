@@ -18,6 +18,7 @@ import {
 import Spinner from "../spinner/spinner.component";
 
 import {
+  SlideshowContainer,
   ImageContainer,
   ButtonContainer,
   LeftSlideshowButton,
@@ -30,6 +31,17 @@ const Slideshow = ({ updateCollections, collections, activeLanguage }) => {
   const [loading, setLoading] = useState(true);
   const [slideNumber, setSlideNumber] = useState(0);
 
+  // animate the slideshow every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSlideNumber(
+        slideNumber < collections.length - 1 ? slideNumber + 1 : 0
+      );
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [slideNumber, collections.length]);
+
+  // handle change of collections on start
   useEffect(() => {
     const collectionRef = firestore.collection("collections");
 
@@ -38,7 +50,7 @@ const Slideshow = ({ updateCollections, collections, activeLanguage }) => {
       updateCollections(collectionsMap);
       setLoading(false);
     });
-  }, [updateCollections]);
+  }, []);
 
   const handleLeftClick = () => {
     // if at start, go to the end, otherwise go down one
@@ -55,14 +67,12 @@ const Slideshow = ({ updateCollections, collections, activeLanguage }) => {
   return loading ? (
     <Spinner />
   ) : (
-    <ImageContainer
-      style={{
-        backgroundImage: `url(${collections[slideNumber].previewImageUrl})`,
-      }}
-      alt={`${
-        collections[slideNumber].name[activeLanguage.name.toLowerCase()]
-      } image`}
-    >
+    <SlideshowContainer>
+      <ImageContainer
+        style={{
+          backgroundImage: `url(${collections[slideNumber].previewImageUrl})`,
+        }} slideDidUpdate={slideNumber}
+      />
       <ButtonContainer>
         <LeftSlideshowButton onClick={handleLeftClick}>
           <LeftIcon />
@@ -76,13 +86,14 @@ const Slideshow = ({ updateCollections, collections, activeLanguage }) => {
           <RightIcon />
         </RightSlideshowButton>
       </ButtonContainer>
-    </ImageContainer>
+    </SlideshowContainer>
   );
 };
 
 Slideshow.propTypes = {
   updateCollections: PropTypes.func.isRequired,
   collections: PropTypes.array.isRequired,
+  activeLanguage: PropTypes.object,
 };
 
 const mapDispatchToProps = (dispatch) => ({
@@ -94,6 +105,6 @@ const mapStateToProps = createStructuredSelector({
   collections: selectCollectionsForPreview,
 });
 
-export default withRouter(
-  withLocalize(connect(mapStateToProps, mapDispatchToProps)(Slideshow))
+export default withLocalize(
+  withRouter(connect(mapStateToProps, mapDispatchToProps)(Slideshow))
 );

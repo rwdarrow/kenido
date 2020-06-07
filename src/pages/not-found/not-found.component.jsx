@@ -35,4 +35,4 @@ class NotFound extends React.Component {
   }
 }
 
-export default withRouter(withLocalize(NotFound));
+export default withLocalize(withRouter(NotFound));

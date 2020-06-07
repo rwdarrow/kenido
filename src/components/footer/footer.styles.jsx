@@ -1,9 +1,6 @@
 import styled, { css, keyframes } from "styled-components";
 import { ChevronUp } from "@styled-icons/boxicons-regular/ChevronUp";
 
-const kn_red = "#9b0000";
-const kn_red_highlight = "#6d0101";
-
 export const FooterContainer = styled.div`
   position: fixed;
   left: 0;
@@ -27,13 +24,13 @@ export const OpenCloseContainer = styled.button`
   height: 45px;
   width: 95px;
   cursor: pointer;
-  background-color: ${kn_red};
+  background-color: var(--kn-red);
   transition: all 300ms ease-in-out;
   transform: ${(props) =>
     props.hide ? "translate(0, 150px)" : "translate(0, 0)"};
 
   &:hover {
-    background-color: ${kn_red_highlight};
+    background-color: var(--kn-red-highlight);
   }
 `;
 

@@ -4,9 +4,6 @@ import { Link } from "react-router-dom"
 import { Menu } from "@styled-icons/material"
 import { ShoppingBag } from "@styled-icons/feather/ShoppingBag"
 
-const kn_red = "#9b0000";
-const kn_red_highlight = "#6d0101";
-
 export const HeaderContainer = styled.div`
   height: 70px;
   width: 100%;
@@ -23,7 +20,7 @@ export const LeftContentContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  background-color: ${kn_red};
+  background-color: var(--kn-red);
 `
 
 export const MenuButton = styled(Menu)`
@@ -49,11 +46,11 @@ export const RightContentContainer = styled.button`
   justify-content: space-evenly;
   align-items: center;
   cursor: pointer;
-  background-color: ${kn_red};
+  background-color: var(--kn-red);
   transition: all 300ms ease-in-out;
 
   &:hover {
-    background-color: ${kn_red_highlight}
+    background-color: var(--kn-red-highlight);
   }
 `
 
