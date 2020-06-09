@@ -1,5 +1,4 @@
 import React from "react";
-import { withLocalize } from "react-localize-redux";
 import { withRouter } from "react-router-dom";
 
 import { Text } from '../../containers/language';
@@ -29,4 +28,4 @@ class NotFound extends React.Component {
   }
 }
 
-export default withLocalize(withRouter(NotFound));
+export default withRouter(NotFound);

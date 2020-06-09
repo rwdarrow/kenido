@@ -1,29 +1,18 @@
-import styled, { keyframes, css} from "styled-components";
+import styled from "styled-components";
 import { ChevronLeft } from "@styled-icons/boxicons-regular/ChevronLeft";
 import { ChevronRight } from "@styled-icons/boxicons-regular/ChevronRight";
 
-const fade = keyframes`
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
-`;
+import { motion } from "framer-motion"
 
-export const SlideshowContainer = styled.div`
-
-`;
-
-export const ImageContainer = styled.img`
+export const SlideshowContainer  = styled.div`
   position: absolute;
+`
+
+export const PreviewImageContainer = styled(motion.div)`
   height: 100vh;
   width: 100vw;
   background-size: cover;
   background-position: center;
-  background-image: ${({ imageUrl }) => `url(${imageUrl})`};
-
-  /* animation: ${props => props.slideDidUpdate >= 0 ? css`${fade} 2s` : 'none' }; */
 `
 
 export const ButtonContainer = styled.div`

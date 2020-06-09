@@ -1,8 +1,11 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext, useCallback } from "react";
 import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { withRouter } from "react-router-dom";
+
+import { AnimatePresence } from "framer-motion";
+import { wrap } from "@popmotion/popcorn";
 
 import { LanguageContext } from "../../containers/language";
 
@@ -10,12 +13,9 @@ import { selectDirectorySections } from "../../redux/directory/directory.selecto
 
 import CustomButton from "../custom-button/custom-button.component";
 
-import homeScarves from "../../assets/images/home-scarves.png"
-import homePonchos from "../../assets/images/home-ponchos.png"
-
 import {
   SlideshowContainer,
-  ImageContainer,
+  PreviewImageContainer,
   ButtonContainer,
   LeftSlideshowButton,
   RightSlideshowButton,
@@ -23,56 +23,96 @@ import {
   RightIcon,
 } from "./slideshow.styles";
 
-// preview images for collections. Must be in same order as collections in reducer
-const previewImages = [homeScarves, homePonchos]
+const variants = {
+  enter: (direction) => {
+    return {
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0,
+    };
+  },
+  center: {
+    zIndex: 1,
+    x: 0,
+    opacity: 1,
+  },
+  exit: (direction) => {
+    return {
+      zIndex: 0,
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0,
+    };
+  },
+};
 
 const Slideshow = ({ sections }) => {
-  const languageContext = useContext(LanguageContext)
+  const languageContext = useContext(LanguageContext);
   const language = languageContext.language;
 
-  const [slideNumber, setSlideNumber] = useState(0);
+  const [[page, direction], setPage] = useState([0, 0]);
 
-  // animate the slideshow every 5 seconds
+  const imageIndex = wrap(0, sections.length, page);
+
+  const paginate = useCallback((newDirection) => {
+    setPage([page + newDirection, newDirection]);
+  });
+
+  // animate the slideshow every 7 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setSlideNumber(slideNumber < sections.length - 1 ? slideNumber + 1 : 0);
-    }, 5000);
+      paginate(1);
+    }, 7000);
     return () => clearInterval(interval);
-  }, [slideNumber, sections.length]);
-
-  const handleLeftClick = () => {
-    // if at start, go to the end, otherwise go down one
-    setSlideNumber(slideNumber === 0 ? sections.length - 1 : slideNumber - 1);
-  };
-
-  const handleRightClick = () => {
-    // if before end, go up one, otherwise go to start
-    setSlideNumber(slideNumber < sections.length - 1 ? slideNumber + 1 : 0);
-  };
+  }, [paginate]);
 
   return (
     <SlideshowContainer>
-      <ImageContainer
-        style={{
-          backgroundImage: `url(${previewImages[slideNumber]})`,
-        }}
-        slideDidUpdate={slideNumber}
-      />
+      <AnimatePresence initial={false} custom={direction}>
+        <PreviewImageContainer
+          key={page}
+          style={{
+            backgroundImage: `url(${sections[imageIndex].previewImage})`,
+          }}
+          custom={direction}
+          variants={variants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{
+            x: { type: "spring", stiffness: 300, damping: 200 },
+            opacity: { duration: 0.2 },
+          }}
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={1}
+          onDragEnd={(e, { offset, velocity }) => {
+            const swipe = swipePower(offset.x, velocity.x);
+
+            if (swipe < -swipeConfidenceThreshold) {
+              paginate(1);
+            } else if (swipe > swipeConfidenceThreshold) {
+              paginate(-1);
+            }
+          }}
+        />
+      </AnimatePresence>
       <ButtonContainer>
-        <LeftSlideshowButton onClick={handleLeftClick}>
+        <LeftSlideshowButton onClick={() => paginate(-1)}>
           <LeftIcon />
         </LeftSlideshowButton>
-        <CustomButton route={sections[slideNumber].linkUrl}>
-          {`${
-            sections[slideNumber].name[language.text.toLowerCase()]
-          }`.toUpperCase()}
+        <CustomButton route={sections[imageIndex].linkUrl}>
+          {`${sections[imageIndex].name[language.id]}`.toUpperCase()}
         </CustomButton>
-        <RightSlideshowButton onClick={handleRightClick}>
+        <RightSlideshowButton onClick={() => paginate(1)}>
           <RightIcon />
         </RightSlideshowButton>
       </ButtonContainer>
     </SlideshowContainer>
   );
+};
+
+const swipeConfidenceThreshold = 10000;
+const swipePower = (offset, velocity) => {
+  return Math.abs(offset) * velocity;
 };
 
 Slideshow.propTypes = {

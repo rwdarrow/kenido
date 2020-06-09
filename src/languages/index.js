@@ -1,12 +1,12 @@
-import english from './english';
-import deutsch from './deutsch';
+import en from './en';
+import de from './de';
 
 export const dictionaryList = {
-  english,
-  deutsch
+  en,
+  de
 };
 
 export const languageOptions = [
-  { id: 'english', text: 'English'},
-  { id: 'deutsch', text: 'Deutsch' }
+  { id: 'en', text: 'English'},
+  { id: 'de', text: 'Deutsch' }
 ];
