@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 
 export const SlideshowContainer  = styled.div`
   position: absolute;
+  background-color: black;
 `
 
 export const PreviewImageContainer = styled(motion.div)`
@@ -33,7 +34,7 @@ export const LeftSlideshowButton = styled.button`
   float: left;
 
   &:hover {
-    background-color: var(--kn-red-highlight);
+    background-color: black;
   }
 `;
 
@@ -46,7 +47,7 @@ export const RightSlideshowButton = styled.button`
   float: right;
 
   &:hover {
-    background-color: var(--kn-red-highlight);
+    background-color: black;
   }
 `;
 

@@ -23,27 +23,6 @@ import {
   RightIcon,
 } from "./slideshow.styles";
 
-const variants = {
-  enter: (direction) => {
-    return {
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0,
-    };
-  },
-  center: {
-    zIndex: 1,
-    x: 0,
-    opacity: 1,
-  },
-  exit: (direction) => {
-    return {
-      zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
-      opacity: 0,
-    };
-  },
-};
-
 const Slideshow = ({ sections }) => {
   const languageContext = useContext(LanguageContext);
   const language = languageContext.language;
@@ -66,21 +45,17 @@ const Slideshow = ({ sections }) => {
 
   return (
     <SlideshowContainer>
-      <AnimatePresence initial={false} custom={direction}>
+      <AnimatePresence initial={true} custom={direction}>
         <PreviewImageContainer
           key={page}
           style={{
             backgroundImage: `url(${sections[imageIndex].previewImage})`,
           }}
           custom={direction}
-          variants={variants}
-          initial="enter"
-          animate="center"
+          initial={{ opacity: 0.25 }}
+          animate={{ opacity: 1 }}
           exit="exit"
-          transition={{
-            x: { type: "spring", stiffness: 300, damping: 200 },
-            opacity: { duration: 0.2 },
-          }}
+          transition={{ ease: "easeInOut", duration: 0.5 }}
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
           dragElastic={1}

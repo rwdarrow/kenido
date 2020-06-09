@@ -17,32 +17,30 @@ import {
   SidebarOption,
 } from "./sidebar.styles";
 
-const Sidebar = ({ sidebarHidden, toggleSidebarHidden }) => {
-  return (
-    <SidebarContainer
-      initial={false}
-      transition={{ ease: "easeIn" }}
-      animate={{ x: sidebarHidden ? "-100%" : "0%" }}
-    >
-      <SidebarContentContainer>
-        <CloseButton onClick={toggleSidebarHidden} />
-        <SidebarOption to="/shop" onClick={toggleSidebarHidden}>
-          <Text tid="shop" />
-        </SidebarOption>
-        <SidebarOption to="/about" onClick={toggleSidebarHidden}>
-          <Text tid="about" />
-        </SidebarOption>
-        <SidebarOption to="/care" onClick={toggleSidebarHidden}>
-          <Text tid="care" />
-        </SidebarOption>
-        <SidebarOption to="/contact" onClick={toggleSidebarHidden}>
-          <Text tid="contact" />
-        </SidebarOption>
-      </SidebarContentContainer>
-      <LanguageSelector />
-    </SidebarContainer>
-  );
-};
+const Sidebar = ({ sidebarHidden, toggleSidebarHidden }) => (
+  <SidebarContainer
+    initial={false}
+    transition={{ ease: "easeIn" }}
+    animate={{ x: sidebarHidden ? "-100%" : "0%" }}
+  >
+    <SidebarContentContainer>
+      <CloseButton onClick={toggleSidebarHidden} />
+      <SidebarOption to="/shop" onClick={toggleSidebarHidden}>
+        <Text tid="shop" />
+      </SidebarOption>
+      <SidebarOption to="/about" onClick={toggleSidebarHidden}>
+        <Text tid="about" />
+      </SidebarOption>
+      <SidebarOption to="/care" onClick={toggleSidebarHidden}>
+        <Text tid="care" />
+      </SidebarOption>
+      <SidebarOption to="/contact" onClick={toggleSidebarHidden}>
+        <Text tid="contact" />
+      </SidebarOption>
+    </SidebarContentContainer>
+    <LanguageSelector />
+  </SidebarContainer>
+);
 
 const mapStateToProps = createStructuredSelector({
   sidebarHidden: selectSidebarHidden,

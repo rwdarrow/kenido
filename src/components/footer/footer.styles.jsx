@@ -30,7 +30,7 @@ export const OpenCloseContainer = styled.button`
     props.hide ? "translate(0, 150px)" : "translate(0, 0)"};
 
   &:hover {
-    background-color: var(--kn-red-highlight);
+    background-color: black;
   }
 `;
 

@@ -1,8 +1,8 @@
-import styled from "styled-components"
-import { Link } from "react-router-dom"
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-import { Menu } from "@styled-icons/material"
-import { ShoppingBag } from "@styled-icons/feather/ShoppingBag"
+import { Menu } from "@styled-icons/material";
+import { ShoppingBag } from "@styled-icons/feather/ShoppingBag";
 
 export const HeaderContainer = styled.div`
   height: 70px;
@@ -22,8 +22,8 @@ export const LeftContentContainer = styled.div`
   justify-content: space-evenly;
   background-color: var(--kn-red);
 
-  /* visibility: ${(props) => props.sidebarHidden ? "" : "hidden"} */
-`
+  /* visibility: ${(props) => (props.sidebarHidden ? "" : "hidden")} */
+`;
 
 export const MenuButton = styled(Menu)`
   height: 100%;
@@ -38,7 +38,7 @@ export const LogoContainer = styled(Link)`
   text-decoration: none;
   position: relative;
   cursor: pointer;
-`
+`;
 
 export const RightContentContainer = styled.button`
   height: 100%;
@@ -52,17 +52,17 @@ export const RightContentContainer = styled.button`
   transition: all 300ms ease-in-out;
 
   &:hover {
-    background-color: var(--kn-red-highlight);
+    background-color: black;
   }
-`
+`;
 
 export const ShoppingBagContainer = styled(ShoppingBag)`
   height: 70%;
   background-color: transparent;
-`
+`;
 
 export const ItemCountContainer = styled.span`
   font-family: "Prata";
   font-size: 25px;
-  display: ${props => props.itemCount > 0 ? 'inline' : 'none' };
-`
+  display: ${(props) => (props.itemCount > 0 ? "inline" : "none")};
+`;

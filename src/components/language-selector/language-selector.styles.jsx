@@ -10,9 +10,9 @@ export const LanguageOption = styled.button`
   background-color: transparent;
   font-size: 35px;
   cursor: pointer;
-  transition: all 300ms ease-in-out;
+  transition: color 300ms ease-in-out, border-color 300ms ease-in-out;
 
-  border-style: ${(props) => props.selected ? "solid" : "none"};
+  border-style: ${(props) => (props.selected ? "solid" : "none")};
   border-width: 5px;
   border-color: white;
   padding: 15px;

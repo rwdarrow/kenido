@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
+import notFoundBackground from "../../assets/images/not-found-background.jpg"
+
 export const ImageContainer = styled.div`
   height: 100vh;
   background-size: cover;
   background-position: center 25%;
-  background-image: url("https://firebasestorage.googleapis.com/v0/b/kenido-db.appspot.com/o/not-found-background.jpg?alt=media&token=ba62a109-0d40-4aed-bda1-f96325d5bb2a");
+  background-image: url(${notFoundBackground});
   position: absolute;
   width: 100vw;
 

@@ -3,7 +3,6 @@ import { createGlobalStyle } from "styled-components"
 export const GlobalStyle = createGlobalStyle`
   :root {
     --kn-red: #9b0000;
-    --kn-red-highlight: #6d0101;
   }
 
   body {

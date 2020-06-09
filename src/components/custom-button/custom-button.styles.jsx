@@ -8,6 +8,6 @@ export const CustomButtonContainer = styled.button`
   transition: all 300ms ease-in-out;
 
   &:hover {
-    background-color: var(--kn-red-highlight);
+    background-color: black;
   }
 `;
