@@ -11,8 +11,10 @@ const LanguageSelector = () => {
     const selectedLanguage = languageOptions.find(
       (item) => item.id === event.target.value
     );
+
     // set selected language by calling context method
     languageContext.setLanguage(selectedLanguage);
+    window.localStorage.setItem("language", JSON.stringify(selectedLanguage))
   };
 
   return (
@@ -22,8 +24,9 @@ const LanguageSelector = () => {
           key={item.id}
           value={item.id}
           onClick={handleLanguageChange}
+          selected={item.id === languageContext.language.id}
         >
-          {item.text}
+          {item.id.toUpperCase()}
         </LanguageOption>
       ))}
     </SelectorContainer>

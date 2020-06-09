@@ -21,6 +21,8 @@ export const LeftContentContainer = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
   background-color: var(--kn-red);
+
+  /* visibility: ${(props) => props.sidebarHidden ? "" : "hidden"} */
 `
 
 export const MenuButton = styled(Menu)`

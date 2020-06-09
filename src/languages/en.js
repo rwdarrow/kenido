@@ -5,6 +5,12 @@ object files in this folder.
 */
 
 const en = {
+  // sidebar
+  shop: "SHOP",
+  about: "ABOUT US",
+  care: "ALPACA WOOL & CARE",
+  contact: "CONTACT",
+
   // not found page
   toHome: "TO HOME",
   notFound: "Sorry, we can't find the page you're looking for."

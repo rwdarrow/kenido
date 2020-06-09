@@ -1,12 +1,20 @@
-import React, { useState, createContext, useContext } from 'react';
+import React, { useState, createContext, useContext } from "react";
 
-import { languageOptions, dictionaryList } from '../languages';
+import { languageOptions, dictionaryList } from "../languages";
 
-// create the language context with default selected language
-export const LanguageContext = createContext({
-  language: languageOptions[0],
-  dictionary: dictionaryList[languageOptions[0].id]
-});
+const storedLanguage = JSON.parse(window.localStorage.getItem("language"));
+
+// create the language context  from the stored language, or the default
+// if it is undefined
+export const LanguageContext = storedLanguage
+  ? createContext({
+      language: storedLanguage,
+      dictionary: dictionaryList[storedLanguage.id],
+    })
+  : createContext({
+      language: languageOptions[0],
+      dictionary: dictionaryList[languageOptions[0].id],
+    });
 
 // it provides the language context to app
 export const LanguageProvider = (props) => {
@@ -20,7 +28,7 @@ export const LanguageProvider = (props) => {
     setLanguage: (selectedLanguage) => {
       setLanguage(selectedLanguage);
       setDictionary(dictionaryList[selectedLanguage.id]);
-    }
+    },
   };
 
   return (
