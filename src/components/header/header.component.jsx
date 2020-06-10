@@ -1,10 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { createStructuredSelector } from "reselect";
 import { connect } from "react-redux";
 import { toggleSidebarHidden } from "../../redux/sidebar/sidebar.actions";
-import { selectSidebarHidden } from "../../redux/sidebar/sidebar.selectors";
 
 import Sidebar from "../sidebar/sidebar.component";
 
@@ -18,15 +16,51 @@ import {
   ItemCountContainer,
 } from "./header.styles";
 
-const Header = ({ itemCount, sidebarHidden, toggleSidebarHidden }) => (
+const leftContainerVariants = {
+  hidden: {
+    opacity: 0,
+    x: "-100%",
+  },
+  visible: {
+    opacity: 1,
+    x: "0%",
+    transition: {
+      duration: 1,
+      delay: 0.3,
+    },
+  },
+};
+
+const rightContainerVariants = {
+  hidden: {
+    opacity: 0,
+    x: "100%",
+  },
+  visible: {
+    opacity: 1,
+    x: "0%",
+    transition: {
+      duration: 1,
+    },
+  },
+};
+
+const Header = ({ itemCount, toggleSidebarHidden }) => (
   <>
-    
     <HeaderContainer>
-      <LeftContentContainer>
+      <LeftContentContainer
+        variants={leftContainerVariants}
+        initial="hidden"
+        animate="visible"
+      >
         <MenuButton onClick={toggleSidebarHidden} />
         <LogoContainer to="/">KENIDO</LogoContainer>
       </LeftContentContainer>
-      <RightContentContainer>
+      <RightContentContainer
+        variants={rightContainerVariants}
+        initial="hidden"
+        animate="visible"
+      >
         <ShoppingBagContainer />
         <ItemCountContainer itemCount={itemCount}>
           {itemCount}
@@ -39,16 +73,11 @@ const Header = ({ itemCount, sidebarHidden, toggleSidebarHidden }) => (
 
 Header.propTypes = {
   itemCount: PropTypes.number,
-  sidebarHidden: PropTypes.bool.isRequired,
   toggleSidebarHidden: PropTypes.func.isRequired,
 };
-
-const mapStateToProps = createStructuredSelector({
-  sidebarHidden: selectSidebarHidden,
-});
 
 const mapDispatchToProps = (dispatch) => ({
   toggleSidebarHidden: () => dispatch(toggleSidebarHidden()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(null, mapDispatchToProps)(Header);

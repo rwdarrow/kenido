@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 import { Close } from "@styled-icons/material"
+
 import { motion } from "framer-motion"
 
 export const SidebarContainer = styled(motion.div)`
@@ -10,7 +11,7 @@ export const SidebarContainer = styled(motion.div)`
   padding: 25px;
 `
 
-export const SidebarContentContainer = styled.div`
+export const SidebarContentContainer = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   flex-direction: column;

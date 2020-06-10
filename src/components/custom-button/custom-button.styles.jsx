@@ -1,13 +1,16 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
-export const CustomButtonContainer = styled.button`
+import { motion } from "framer-motion"
+
+export const CustomButtonContainer = styled(motion.button)`
   background-color: var(--kn-red);
   cursor: pointer;
   font-size: 20px;
   padding: 15px;
-  transition: all 300ms ease-in-out;
+  transition: background-color 300ms ease-in-out, transform 300ms ease-in-out;
 
   &:hover {
     background-color: black;
+    transform: scale(1.1);
   }
 `;

@@ -25,7 +25,7 @@ export const ButtonContainer = styled.div`
   align-items: center;
 `;
 
-export const LeftSlideshowButton = styled.button`
+export const LeftSlideshowButton = styled(motion.button)`
   height: 95px;
   width: 45px;
   cursor: pointer;
@@ -38,7 +38,7 @@ export const LeftSlideshowButton = styled.button`
   }
 `;
 
-export const RightSlideshowButton = styled.button`
+export const RightSlideshowButton = styled(motion.button)`
   height: 95px;
   width: 45px;
   cursor: pointer;

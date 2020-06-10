@@ -1,5 +1,7 @@
 import homeScarves from "../../assets/images/home-scarves.jpg"
 import homePonchos from "../../assets/images/home-ponchos.jpg"
+import homeSweaters from "../../assets/images/home-sweaters.jpg"
+import homeAccessories from "../../assets/images/home-accessories.jpg"
 
 const INITIAL_STATE = {
   sections: [
@@ -20,6 +22,24 @@ const INITIAL_STATE = {
       previewImage: homePonchos,
       id: 2,
       linkUrl: "/ponchos%20and%20capes",
+    },
+    {
+      name: {
+        en: "Sweaters and Knitwear",
+        de: "Pullover und Strickware",
+      },
+      previewImage: homeSweaters,
+      id: 3,
+      linkUrl: "/sweaters%20and%20knitwear",
+    },
+    {
+      name: {
+        en: "Accessories",
+        de: "Accessoires",
+      },
+      previewImage: homeAccessories,
+      id: 4,
+      linkUrl: "/accessories",
     },
   ],
 };

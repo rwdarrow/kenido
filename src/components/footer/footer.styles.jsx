@@ -1,4 +1,5 @@
 import styled, { css, keyframes } from "styled-components";
+import { Link } from "react-router-dom";
 import { ChevronUp } from "@styled-icons/boxicons-regular/ChevronUp";
 
 export const FooterContainer = styled.div`
@@ -11,13 +12,72 @@ export const FooterContainer = styled.div`
   align-items: center;
 `;
 
-export const FooterContent = styled.div`
+export const FooterBody = styled.div`
   background-color: black;
   width: 100%;
-  height: 150px;
+  height: 275px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   transition: all 300ms ease-in-out;
   transform: ${(props) =>
-    props.hide ? "translate(0, 150px)" : "translate(0, 0)"};
+    props.hide ? "translate(0, 275px)" : "translate(0, 0)"};
+`;
+
+export const FooterContent = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px;
+`;
+
+export const FooterSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+`;
+
+export const FooterSectionHeading = styled.h1`
+  font-size: 20px;
+  font-family: "Franklin Gothic";
+`;
+
+export const FooterSectionItem = styled(Link)`
+  font-size: 15px;
+  margin: 3px;
+  font-family: "Franklin Gothic Book";
+  transition: all 300ms ease-in-out;
+
+  &:hover {
+    color: var(--kn-red);
+  }
+`;
+
+export const FooterFineprintContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const MadeWithLove = styled.text`
+  font-size: 20px;
+  font-family: "Franklin Gothic Book";
+  margin-bottom: 15px;
+`;
+
+export const MadeWithLoveLink = styled.a`
+  font-size: 20px;
+  font-family: "Franklin Gothic Book";
+  margin-bottom: 15px;
+  transition: all 300ms ease-in-out;
+
+  &:hover {
+    color: var(--kn-red);
+  }
+`;
+
+export const FooterFineprint = styled.text`
+  font-size: 10px;
+  font-family: "Franklin Gothic Book";
 `;
 
 export const OpenCloseContainer = styled.button`
@@ -27,7 +87,7 @@ export const OpenCloseContainer = styled.button`
   background-color: var(--kn-red);
   transition: all 300ms ease-in-out;
   transform: ${(props) =>
-    props.hide ? "translate(0, 150px)" : "translate(0, 0)"};
+    props.hide ? "translate(0, 275px)" : "translate(0, 0)"};
 
   &:hover {
     background-color: black;

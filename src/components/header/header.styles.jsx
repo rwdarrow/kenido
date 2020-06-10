@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+import { motion } from "framer-motion"
+
 import { Menu } from "@styled-icons/material";
 import { ShoppingBag } from "@styled-icons/feather/ShoppingBag";
 
@@ -13,7 +15,7 @@ export const HeaderContainer = styled.div`
   position: absolute;
 `;
 
-export const LeftContentContainer = styled.div`
+export const LeftContentContainer = styled(motion.div)`
   height: 100%;
   width: 468px;
   float: left;
@@ -21,8 +23,6 @@ export const LeftContentContainer = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
   background-color: var(--kn-red);
-
-  /* visibility: ${(props) => (props.sidebarHidden ? "" : "hidden")} */
 `;
 
 export const MenuButton = styled(Menu)`
@@ -40,7 +40,7 @@ export const LogoContainer = styled(Link)`
   cursor: pointer;
 `;
 
-export const RightContentContainer = styled.button`
+export const RightContentContainer = styled(motion.button)`
   height: 100%;
   width: 140px;
   float: right;

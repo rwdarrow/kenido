@@ -23,6 +23,18 @@ import {
   RightIcon,
 } from "./slideshow.styles";
 
+const buttonVariants = {
+  hidden: {
+    opacity: 0
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 1, 
+    }
+  }
+}
+
 const Slideshow = ({ sections }) => {
   const languageContext = useContext(LanguageContext);
   const language = languageContext.language;
@@ -71,13 +83,21 @@ const Slideshow = ({ sections }) => {
         />
       </AnimatePresence>
       <ButtonContainer>
-        <LeftSlideshowButton onClick={() => paginate(-1)}>
+        <LeftSlideshowButton 
+        variants={buttonVariants}
+        initial="hidden"
+        animate="visible"
+        onClick={() => paginate(-1)}>
           <LeftIcon />
         </LeftSlideshowButton>
         <CustomButton route={sections[imageIndex].linkUrl}>
           {`${sections[imageIndex].name[language.id]}`.toUpperCase()}
         </CustomButton>
-        <RightSlideshowButton onClick={() => paginate(1)}>
+        <RightSlideshowButton 
+        variants={buttonVariants}
+        initial="hidden"
+        animate="visible"
+        onClick={() => paginate(1)}>
           <RightIcon />
         </RightSlideshowButton>
       </ButtonContainer>

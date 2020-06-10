@@ -17,13 +17,40 @@ import {
   SidebarOption,
 } from "./sidebar.styles";
 
+const sidebarVariants = {
+  hidden: {
+    x: "-100%",
+    transition: {
+      ease: "easeInOut",
+      when: "afterChildren"
+    }
+  },
+  visible: {
+    x: "0%",
+    transition: {
+      ease: "easeInOut",
+      when: "beforeChildren",
+      staggerChildren: 0.2
+    }
+  }
+}
+
+const childVariants = {
+  hidden: {
+    opacity: 0
+  },
+  visible: {
+    opacity: 1
+  }
+}
+
 const Sidebar = ({ sidebarHidden, toggleSidebarHidden }) => (
   <SidebarContainer
+    variants={sidebarVariants}
     initial={false}
-    transition={{ ease: "easeIn" }}
-    animate={{ x: sidebarHidden ? "-100%" : "0%" }}
+    animate={sidebarHidden ? "hidden" : "visible"}
   >
-    <SidebarContentContainer>
+    <SidebarContentContainer variants={childVariants}>
       <CloseButton onClick={toggleSidebarHidden} />
       <SidebarOption to="/shop" onClick={toggleSidebarHidden}>
         <Text tid="shop" />
@@ -38,7 +65,7 @@ const Sidebar = ({ sidebarHidden, toggleSidebarHidden }) => (
         <Text tid="contact" />
       </SidebarOption>
     </SidebarContentContainer>
-    <LanguageSelector />
+    <LanguageSelector variants={childVariants}/>
   </SidebarContainer>
 );
 

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const SelectorContainer = styled.div`
+import { motion } from "framer-motion"
+
+export const SelectorContainer = styled(motion.div)`
   display: flex;
   justify-content: space-evenly;
   background-color: transparent;
