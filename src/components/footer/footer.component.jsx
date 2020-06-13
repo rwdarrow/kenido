@@ -38,16 +38,36 @@ const Footer = () => {
             <FooterSectionHeading>
               <Text tid="legal" />
             </FooterSectionHeading>
-            <FooterSectionItem to="/agb">
+            <FooterSectionItem
+              to="/agb"
+              onClick={() => {
+                setHidden(!hidden);
+              }}
+            >
               <Text tid="termsAndConds" />
             </FooterSectionItem>
-            <FooterSectionItem to="/impressum">
+            <FooterSectionItem
+              to="/impressum"
+              onClick={() => {
+                setHidden(!hidden);
+              }}
+            >
               <Text tid="impressum" />
             </FooterSectionItem>
-            <FooterSectionItem to="/">
+            <FooterSectionItem
+              to="/"
+              onClick={() => {
+                setHidden(!hidden);
+              }}
+            >
               <Text tid="privacyPolicy" />
             </FooterSectionItem>
-            <FooterSectionItem to="/">
+            <FooterSectionItem
+              to="/"
+              onClick={() => {
+                setHidden(!hidden);
+              }}
+            >
               <Text tid="cookiePolicy" />
             </FooterSectionItem>
           </FooterSection>
@@ -55,13 +75,28 @@ const Footer = () => {
             <FooterSectionHeading>
               <Text tid="customerService" />
             </FooterSectionHeading>
-            <FooterSectionItem to="/">
+            <FooterSectionItem
+              to="/"
+              onClick={() => {
+                setHidden(!hidden);
+              }}
+            >
               <Text tid="contactUs" />
             </FooterSectionItem>
-            <FooterSectionItem to="/">
+            <FooterSectionItem
+              to="/"
+              onClick={() => {
+                setHidden(!hidden);
+              }}
+            >
               <Text tid="ordering" />
             </FooterSectionItem>
-            <FooterSectionItem to="/">
+            <FooterSectionItem
+              to="/"
+              onClick={() => {
+                setHidden(!hidden);
+              }}
+            >
               <Text tid="returnPolicy" />
             </FooterSectionItem>
           </FooterSection>
@@ -71,10 +106,18 @@ const Footer = () => {
             </FooterSectionHeading>
             <SocialMediaContainer>
               <a href="https://www.instagram.com/kenidofashion/">
-                <InstagramIcon />
+                <InstagramIcon
+                  onClick={() => {
+                    setHidden(!hidden);
+                  }}
+                />
               </a>
               <a href="https://www.facebook.com/kenidofashion">
-                <FacebookIcon />
+                <FacebookIcon
+                  onClick={() => {
+                    setHidden(!hidden);
+                  }}
+                />
               </a>
             </SocialMediaContainer>
           </FooterSection>
@@ -88,6 +131,9 @@ const Footer = () => {
           <MadeWithLove>
             <Text tid="madeWithLove" />
             <MadeWithLoveLink
+              onClick={() => {
+                setHidden(!hidden);
+              }}
               href="https://github.com/rwdarrow"
               target="_blank"
             >

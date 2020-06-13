@@ -49,7 +49,7 @@ export const RightContentContainer = styled(motion.button)`
   align-items: center;
   cursor: pointer;
   background-color: var(--kn-red);
-  transition: all 300ms ease-in-out;
+  transition: all 500ms linear;
 
   &:hover {
     background-color: black;

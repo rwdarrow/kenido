@@ -104,7 +104,7 @@ export const OpenCloseContainer = styled.button`
   width: 95px;
   cursor: pointer;
   background-color: var(--kn-red);
-  transition: all 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, background-color 500ms linear;
   transform: ${(props) =>
     props.hide ? "translate(0, 275px)" : "translate(0, 0)"};
 

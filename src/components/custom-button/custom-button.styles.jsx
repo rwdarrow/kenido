@@ -7,10 +7,9 @@ export const CustomButtonContainer = styled(motion.button)`
   cursor: pointer;
   font-size: 20px;
   padding: 15px;
-  transition: background-color 300ms ease-in-out, transform 300ms ease-in-out;
+  transition: background-color 500ms linear;
 
   &:hover {
     background-color: black;
-    transform: scale(1.1);
   }
 `;

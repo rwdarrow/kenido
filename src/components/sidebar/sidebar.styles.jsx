@@ -9,6 +9,8 @@ export const SidebarContainer = styled(motion.div)`
   width: 468px;
   height: 100vh;
   padding: 25px;
+  position: absolute;
+  z-index: 3;
 `
 
 export const SidebarContentContainer = styled(motion.div)`

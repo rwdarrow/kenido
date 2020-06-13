@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: "Prata";
+    overflow: hidden;
   }
 
   button {

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { ChevronLeft } from "@styled-icons/boxicons-regular/ChevronLeft";
 import { ChevronRight } from "@styled-icons/boxicons-regular/ChevronRight";
 
@@ -7,13 +7,25 @@ import { motion } from "framer-motion";
 export const SlideshowContainer = styled.div`
   position: absolute;
   background-color: black;
+  overflow: hidden;
 `;
+
+const zoomIn = keyframes`
+  0% {
+      transform: scale(1,1);
+  }
+  100% {
+      transform: scale(1.1,1.1);
+  }
+`
 
 export const PreviewImageContainer = styled(motion.div)`
   height: 100vh;
   width: 100vw;
   background-size: cover;
-  background-position: center;
+  background-position: center top;
+  animation: ${zoomIn} 18s forwards; 
+  
 `;
 
 export const ButtonContainer = styled.div`
@@ -30,7 +42,7 @@ export const LeftSlideshowButton = styled(motion.button)`
   width: 45px;
   cursor: pointer;
   background-color: var(--kn-red);
-  transition: all 300ms ease-in-out;
+  transition: all 500ms linear;
   float: left;
 
   &:hover {
@@ -43,7 +55,7 @@ export const RightSlideshowButton = styled(motion.button)`
   width: 45px;
   cursor: pointer;
   background-color: var(--kn-red);
-  transition: all 300ms ease-in-out;
+  transition: all 500ms linear;
   float: right;
 
   &:hover {

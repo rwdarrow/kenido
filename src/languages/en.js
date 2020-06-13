@@ -31,10 +31,14 @@ const en = {
 
   sitemap: "SITE MAP",
 
-  footerFineprint_1: "[1] Applies to deliveries within Germany. See Ordering and Payment for delivery times for other countries and information on calculation of delivery dates.",
-  footerFineprint_2: "[2] No sales tax is charged in accordance with Section 19 (1) of the UStG.",
+  madeWithLove: "Made with 💗 by ",
+  
+  // checkout
+  checkoutFineprint_1: "[1] Applies to deliveries within Germany. See Ordering and Payment for delivery times for other countries and information on calculation of delivery dates.",
+  checkoutFineprint_2: "[2] No sales tax is charged in accordance with Section 19 (1) of the UStG.",
 
-  madeWithLove: "Made with 💗 by "
+  // >>>> MISC <<<<
+  returnToTopButtonText: "Return to top"
 }
 
 export default en;

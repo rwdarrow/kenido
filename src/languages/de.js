@@ -31,10 +31,14 @@ const de = {
 
   sitemap: "SEITENBAUM",
 
-  footerFineprint_1: "[1] Gilt für Lieferungen in folgendes Land: Deutschland. Lieferzeiten für andere Länder und Informationen zur Berechnung des Liefertermins siehe Liefer- und Zahlungsbedingungen",
-  footerFineprint_2: "[2] Gemäß §19 Abs. 1 UStG wird keine Umsatzsteuer berechnet.",
+  madeWithLove: "Mit 💗 gemacht von ",
 
-  madeWithLove: "Mit 💗 gemacht von "
+  // checkout
+  checkoutFineprint_1: "[1] Gilt für Lieferungen in folgendes Land: Deutschland. Lieferzeiten für andere Länder und Informationen zur Berechnung des Liefertermins siehe Liefer- und Zahlungsbedingungen",
+  checkoutFineprint_2: "[2] Gemäß §19 Abs. 1 UStG wird keine Umsatzsteuer berechnet.",
+
+  // >>>> MISC <<<<
+  returnToTopButtonText: "Zurück nach oben"
 }
 
 export default de;

@@ -64,10 +64,10 @@ const Slideshow = ({ sections }) => {
             backgroundImage: `url(${sections[imageIndex].previewImage})`,
           }}
           custom={direction}
-          initial={{ opacity: 0.25 }}
+          initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit="exit"
-          transition={{ ease: "easeInOut", duration: 0.5 }}
+          transition={{ duration: 1 }}
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
           dragElastic={1}

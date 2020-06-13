@@ -55,8 +55,9 @@ export const ReturnToTopButton = styled.div`
   height: 30px;
   width: 30px;
   cursor: pointer;
-  transition: transform 100ms linear;
+  transition: all 100ms linear;
   z-index: 2;
+  opacity: ${(props) => props.hidden ? 0 : 100};
 
   &:hover {
     transform: scale(1.1)
