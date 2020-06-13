@@ -2,6 +2,10 @@
   "name": "kenido",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "6.14.4",
+    "node": "12.16.3"
+  },
   "dependencies": {
     "@styled-icons/boxicons-logos": "^10.0.0",
     "@testing-library/jest-dom": "^4.2.4",
@@ -29,7 +33,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
