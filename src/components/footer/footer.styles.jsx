@@ -2,6 +2,24 @@ import styled, { css, keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 import { ChevronUp } from "@styled-icons/boxicons-regular/ChevronUp";
 
+import { Instagram } from "@styled-icons/entypo-social/Instagram"
+import { Facebook } from "@styled-icons/entypo-social/Facebook"
+
+export const InstagramIcon = styled(Instagram)`
+  height: 50px;
+  cursor: pointer;
+  background-color: transparent;
+  margin: 5px;
+`;
+
+export const FacebookIcon = styled(Facebook)`
+  height: 50px;
+  cursor: pointer;
+  background-color: transparent;
+  margin: 5px;
+`;
+
+
 export const FooterContainer = styled.div`
   position: fixed;
   left: 0;
@@ -10,6 +28,8 @@ export const FooterContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all 300ms ease-in-out;
+  z-index: ${(props) => props.hide ? 0 : 3}
 `;
 
 export const FooterBody = styled.div`
@@ -21,13 +41,12 @@ export const FooterBody = styled.div`
   justify-content: center;
   transition: all 300ms ease-in-out;
   transform: ${(props) =>
-    props.hide ? "translate(0, 275px)" : "translate(0, 0)"};
+    props.hide ? "translate(0, 275px)" : "translate(0, 0);"};
 `;
 
 export const FooterContent = styled.div`
   display: flex;
   justify-content: space-evenly;
-  margin: 20px;
 `;
 
 export const FooterSection = styled.div`
@@ -56,28 +75,28 @@ export const FooterFineprintContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
 `;
 
-export const MadeWithLove = styled.text`
-  font-size: 20px;
+export const SocialMediaContainer = styled.div`
+  display: flex;
+`;
+
+export const MadeWithLove = styled.div`
+  font-size: 15px;
   font-family: "Franklin Gothic Book";
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 `;
 
 export const MadeWithLoveLink = styled.a`
-  font-size: 20px;
+  font-size: 15px;
   font-family: "Franklin Gothic Book";
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   transition: all 300ms ease-in-out;
 
   &:hover {
     color: var(--kn-red);
   }
-`;
-
-export const FooterFineprint = styled.text`
-  font-size: 10px;
-  font-family: "Franklin Gothic Book";
 `;
 
 export const OpenCloseContainer = styled.button`

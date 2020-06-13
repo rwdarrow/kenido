@@ -37,10 +37,16 @@ const sidebarVariants = {
 
 const childVariants = {
   hidden: {
-    opacity: 0
+    opacity: 0,
+    transition: {
+      duration: 0.3
+    }
   },
   visible: {
-    opacity: 1
+    opacity: 1,
+    transition: {
+      duration: 0.3
+    }
   }
 }
 

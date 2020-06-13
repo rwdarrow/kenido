@@ -3,14 +3,16 @@ import React, { useState } from "react";
 import { Text } from "../../containers/language";
 
 import {
+  InstagramIcon,
+  FacebookIcon,
   FooterContainer,
   FooterBody,
   FooterContent,
   FooterSection,
   FooterSectionHeading,
   FooterSectionItem,
+  SocialMediaContainer,
   FooterFineprintContainer,
-  FooterFineprint,
   MadeWithLove,
   MadeWithLoveLink,
   OpenCloseContainer,
@@ -21,7 +23,7 @@ const Footer = () => {
   const [hidden, setHidden] = useState(true);
 
   return (
-    <FooterContainer>
+    <FooterContainer hide={hidden}>
       <OpenCloseContainer
         hide={hidden}
         onClick={() => {
@@ -36,16 +38,16 @@ const Footer = () => {
             <FooterSectionHeading>
               <Text tid="legal" />
             </FooterSectionHeading>
-            <FooterSectionItem>
+            <FooterSectionItem to="/agb">
               <Text tid="termsAndConds" />
             </FooterSectionItem>
-            <FooterSectionItem>
+            <FooterSectionItem to="/impressum">
               <Text tid="impressum" />
             </FooterSectionItem>
-            <FooterSectionItem>
+            <FooterSectionItem to="/">
               <Text tid="privacyPolicy" />
             </FooterSectionItem>
-            <FooterSectionItem>
+            <FooterSectionItem to="/">
               <Text tid="cookiePolicy" />
             </FooterSectionItem>
           </FooterSection>
@@ -53,13 +55,13 @@ const Footer = () => {
             <FooterSectionHeading>
               <Text tid="customerService" />
             </FooterSectionHeading>
-            <FooterSectionItem>
+            <FooterSectionItem to="/">
               <Text tid="contactUs" />
             </FooterSectionItem>
-            <FooterSectionItem>
+            <FooterSectionItem to="/">
               <Text tid="ordering" />
             </FooterSectionItem>
-            <FooterSectionItem>
+            <FooterSectionItem to="/">
               <Text tid="returnPolicy" />
             </FooterSectionItem>
           </FooterSection>
@@ -67,6 +69,14 @@ const Footer = () => {
             <FooterSectionHeading>
               <Text tid="socialMedia" />
             </FooterSectionHeading>
+            <SocialMediaContainer>
+              <a href="https://www.instagram.com/kenidofashion/">
+                <InstagramIcon />
+              </a>
+              <a href="https://www.facebook.com/kenidofashion">
+                <FacebookIcon />
+              </a>
+            </SocialMediaContainer>
           </FooterSection>
           <FooterSection>
             <FooterSectionHeading>
@@ -84,14 +94,6 @@ const Footer = () => {
               rwdarrow
             </MadeWithLoveLink>
           </MadeWithLove>
-        </FooterFineprintContainer>
-        <FooterFineprintContainer>
-          <FooterFineprint>
-            <Text tid="footerFineprint_1" />
-          </FooterFineprint>
-          <FooterFineprint>
-            <Text tid="footerFineprint_2" />
-          </FooterFineprint>
         </FooterFineprintContainer>
       </FooterBody>
     </FooterContainer>

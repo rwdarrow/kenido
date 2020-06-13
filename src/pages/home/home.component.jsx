@@ -2,6 +2,6 @@ import React from "react";
 
 import Slideshow from "../../components/slideshow/slideshow.component";
 
-const Home = () => <Slideshow />;
+const HomePage = () => <Slideshow />;
 
-export default Home;
+export default HomePage;

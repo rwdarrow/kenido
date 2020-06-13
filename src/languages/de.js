@@ -22,7 +22,7 @@ const de = {
   privacyPolicy: "Datenschutz",
   cookiePolicy: "Cookie-Richtlinie",
 
-  customerService: "KUNDENSERVICE",
+  customerService: "KUNDENDIENST",
   contactUs: "Kontaktiere Uns",
   ordering: "Liefer- und Zahlungsbedingungen",
   returnPolicy: "Widerrufsbelehrung und -formular",

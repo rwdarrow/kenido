@@ -2,24 +2,24 @@ import styled from "styled-components";
 import { ChevronLeft } from "@styled-icons/boxicons-regular/ChevronLeft";
 import { ChevronRight } from "@styled-icons/boxicons-regular/ChevronRight";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
-export const SlideshowContainer  = styled.div`
+export const SlideshowContainer = styled.div`
   position: absolute;
   background-color: black;
-`
+`;
 
 export const PreviewImageContainer = styled(motion.div)`
   height: 100vh;
   width: 100vw;
   background-size: cover;
   background-position: center;
-`
+`;
 
 export const ButtonContainer = styled.div`
   display: flex;
   position: absolute;
-  top: 65%;
+  top: 60%;
   width: 100vw;
   justify-content: space-between;
   align-items: center;
