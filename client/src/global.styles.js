@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   :root {
@@ -25,4 +25,18 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     color: white;
   }
-`
+
+  table {
+    border-collapse: collapse;
+  }
+
+  th, td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+
+  h1 {
+    text-align: center;
+  }
+`;

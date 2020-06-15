@@ -84,7 +84,7 @@ const Footer = () => {
               <Text tid="contactUs" />
             </FooterSectionItem>
             <FooterSectionItem
-              to="/"
+              to="/ordering_and_payment"
               onClick={() => {
                 setHidden(!hidden);
               }}
@@ -92,7 +92,7 @@ const Footer = () => {
               <Text tid="ordering" />
             </FooterSectionItem>
             <FooterSectionItem
-              to="/"
+              to="/returns"
               onClick={() => {
                 setHidden(!hidden);
               }}

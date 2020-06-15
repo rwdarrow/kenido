@@ -2,8 +2,9 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const path = require("path");
-const compression = require("compression")
+const compression = require("compression");
 const enforce = require("express-sslify");
+const nodemailer = require("nodemailer");
 
 if (process.env.NODE_ENV !== "production") require("dotenv").config();
 
@@ -12,13 +13,16 @@ if (process.env.NODE_ENV !== "production") require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 5000;
 
+const USER = process.env.USER;
+const PASS = process.env.PASS;
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors());
 
 if (process.env.NODE_ENV === "production") {
-  app.use(compression())
+  app.use(compression());
   app.use(enforce.HTTPS({ trustProtoHeader: true }));
   app.use(express.static(path.join(__dirname, "client/build")));
 
@@ -51,3 +55,42 @@ app.listen(port, (error) => {
 //     }
 //   });
 // });
+
+// Instantiate the SMTP server
+const transporter = nodemailer.createTransport({
+  host: "secure.emailsrvr.com",
+  port: 465,
+  secure: true,
+  auth: {
+    user: USER,
+    pass: PASS,
+  },
+});
+
+transporter.verify((error, success) => {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log("Server is ready to take messages");
+  }
+});
+
+// POST route from contact form
+app.post("/send", (req, res, next) => {
+  // Specify what the email will look like
+  const mailOpts = {
+    from: `${req.body.name}`,
+    to: USER,
+    subject: `KENIDO: New message from ${req.body.name} (${req.body.email})`,
+    text: `${req.body.message}`,
+  };
+
+  // Attempt to send the email
+  transporter.sendMail(mailOpts, (error, data) => {
+    if (error) {
+      res.json({ status: "failure" });
+    } else {
+      res.json({ status: "success" });
+    }
+  });
+});

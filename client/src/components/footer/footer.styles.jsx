@@ -29,7 +29,7 @@ export const FooterContainer = styled.div`
   flex-direction: column;
   align-items: center;
   transition: all 300ms ease-in-out;
-  z-index: ${(props) => props.hide ? 0 : 3}
+  z-index: ${(props) => props.hide ? 0 : 3};
 `;
 
 export const FooterBody = styled.div`

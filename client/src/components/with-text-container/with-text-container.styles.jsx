@@ -26,8 +26,6 @@ export const BoxContainer = styled.div`
 `
 
 export const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
   padding: 20px;
   overflow: auto;
   width: 950px;

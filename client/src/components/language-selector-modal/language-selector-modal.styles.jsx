@@ -30,7 +30,7 @@ export const LanguageSelectorContainer = styled.div`
   justify-content: space-evenly;
 `
 
-export const LanguageOption = styled.div`
+export const LanguageOption = styled.button`
   border-style: solid;
   border-width: 2px;
   padding: 20px;

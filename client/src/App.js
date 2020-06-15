@@ -14,6 +14,10 @@ import NotFoundPage from "./pages/not-found/not-found.component";
 import TermsAndCondsPage from "./pages/terms-and-conds/terms-and-conds.component"
 import ImpressumPage from "./pages/impressum/impressum.component"
 import PrivacyPolicyPage from "./pages/privacy-policy/privacy-policy.component"
+import CookiePolicyPage from "./pages/cookie-policy/cookie-policy.component"
+import OrderingAndPaymentPage from "./pages/ordering-and-payment/ordering-and-payment.component"
+import ReturnsPage from "./pages/returns/returns.component"
+import ContactPage from "./pages/contact/contact.component"
 
 const App = () => {
   const storedLanguage = window.localStorage.getItem("language");
@@ -23,12 +27,13 @@ const App = () => {
       <GlobalStyle />
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/language-select" component={NotFoundPage} />
         <Route exact path="/agb" component={TermsAndCondsPage} />
         <Route exact path="/impressum" component={ImpressumPage} />
         <Route exact path="/datenschutz" component={PrivacyPolicyPage} />
-        <Route exact path="/cookies" component={PrivacyPolicyPage} />
-        <Route exact path="/contact" component={PrivacyPolicyPage} />
+        <Route exact path="/cookies" component={CookiePolicyPage} />
+        <Route exact path="/contact" component={ContactPage} />
+        <Route exact path="/ordering_and_payment" component={OrderingAndPaymentPage} />
+        <Route exact path="/returns" component={ReturnsPage} />
         <Route component={NotFoundPage} />
       </Switch>
       <Header />

@@ -12,7 +12,7 @@ const INITIAL_STATE = {
       },
       previewImage: homeScarves,
       id: 1,
-      linkUrl: "/scarves%20and%20stolas",
+      linkUrl: "/scarves_and_stolas",
     },
     {
       name: {
@@ -21,7 +21,7 @@ const INITIAL_STATE = {
       },
       previewImage: homePonchos,
       id: 2,
-      linkUrl: "/ponchos%20and%20capes",
+      linkUrl: "/ponchos_and_capes",
     },
     {
       name: {
@@ -30,7 +30,7 @@ const INITIAL_STATE = {
       },
       previewImage: homeSweaters,
       id: 3,
-      linkUrl: "/sweaters%20and%20knitwear",
+      linkUrl: "/sweaters_and_knitwear",
     },
     {
       name: {

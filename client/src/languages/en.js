@@ -4,7 +4,22 @@ Please be sure when adding properties that they are added to ALL other language
 object files in this folder.
 */
 
+// components are listed in alphabetical order
 const en = {
+  // contact form
+  contactForm: "CONTACT US",
+  nameInputLabel: "Name",
+  emailInputLabel: "E-Mail",
+  messageInputLabel: "Message",
+  acknowledgementInputLabel: "I have read and agree to the ",
+  privacyPolicy: "Privacy Policy (DE)",
+  submitButtonText: "Submit",
+
+  nameRequired: "Name is required",
+  emailRequired: "Email is required",
+  emailInvalid: "Email is invalid",
+  messageRequired: "Message is required",
+
   // sidebar
   shop: "SHOP",
   about: "ABOUT US",
