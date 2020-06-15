@@ -55,7 +55,7 @@ const Footer = () => {
               <Text tid="impressum" />
             </FooterSectionItem>
             <FooterSectionItem
-              to="/"
+              to="/datenschutz"
               onClick={() => {
                 setHidden(!hidden);
               }}
@@ -63,7 +63,7 @@ const Footer = () => {
               <Text tid="privacyPolicy" />
             </FooterSectionItem>
             <FooterSectionItem
-              to="/"
+              to="/cookies"
               onClick={() => {
                 setHidden(!hidden);
               }}
@@ -76,7 +76,7 @@ const Footer = () => {
               <Text tid="customerService" />
             </FooterSectionHeading>
             <FooterSectionItem
-              to="/"
+              to="/contact"
               onClick={() => {
                 setHidden(!hidden);
               }}

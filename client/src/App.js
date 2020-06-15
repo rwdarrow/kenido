@@ -27,6 +27,8 @@ const App = () => {
         <Route exact path="/agb" component={TermsAndCondsPage} />
         <Route exact path="/impressum" component={ImpressumPage} />
         <Route exact path="/datenschutz" component={PrivacyPolicyPage} />
+        <Route exact path="/cookies" component={PrivacyPolicyPage} />
+        <Route exact path="/contact" component={PrivacyPolicyPage} />
         <Route component={NotFoundPage} />
       </Switch>
       <Header />
