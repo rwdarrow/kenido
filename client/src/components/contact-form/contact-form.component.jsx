@@ -118,7 +118,7 @@ const ContactForm = () => {
       <h1>
         <Text tid="contactForm" />
       </h1>
-      <form method="POST" onSubmit={handleSubmit} role="form">
+      <form method="POST" onSubmit={handleSubmit}>
         <InputContainer>
           <label htmlFor="name">
             <Text tid="nameInputLabel" />*
@@ -159,7 +159,7 @@ const ContactForm = () => {
           <Text tid="acknowledgementInputLabel" />
           <Link to="/datenschutz" target="_blank">
             <PrivacyPolicyLink>
-              {language.dictionary.privacyPolicy}
+              {language.dictionary.privacyPolicyLink}
             </PrivacyPolicyLink>
           </Link>
         </CheckboxContainer>

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ChevronsUp } from "@styled-icons/boxicons-regular/ChevronsUp"
+import { motion } from "framer-motion"
 
 import * as background from "../../assets/images/wool-texture.jpg";
 
@@ -16,7 +17,7 @@ export const BackgroundContainer = styled.div`
   align-items: center;
 `;
 
-export const BoxContainer = styled.div`
+export const BoxContainer = styled(motion.div)`
   background-color: var(--kn-red);
   width: 950px;
   height: 70vh;

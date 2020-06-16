@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
+import { PropTypes } from "prop-types";
 import { languageOptions } from "../../languages";
 import { LanguageContext } from "../../containers/language";
 
 import { SelectorContainer, LanguageOption } from "./language-selector.styles";
 
-const LanguageSelector = () => {
+const LanguageSelector = ({ variants }) => {
   const languageContext = useContext(LanguageContext);
 
   const handleLanguageChange = (event) => {
@@ -14,11 +15,11 @@ const LanguageSelector = () => {
 
     // set selected language by calling context method
     languageContext.setLanguage(selectedLanguage);
-    window.localStorage.setItem("language", JSON.stringify(selectedLanguage))
+    window.localStorage.setItem("language", JSON.stringify(selectedLanguage));
   };
 
   return (
-    <SelectorContainer>
+    <SelectorContainer variants={variants}>
       {languageOptions.map((item) => (
         <LanguageOption
           key={item.id}
@@ -31,6 +32,10 @@ const LanguageSelector = () => {
       ))}
     </SelectorContainer>
   );
+};
+
+LanguageSelector.propTypes = {
+  variants: PropTypes.object.isRequired,
 };
 
 export default LanguageSelector;

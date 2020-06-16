@@ -12,7 +12,7 @@ const en = {
   emailInputLabel: "E-Mail",
   messageInputLabel: "Message",
   acknowledgementInputLabel: "I have read and agree to the ",
-  privacyPolicy: "Privacy Policy (DE)",
+  privacyPolicyLink: "Privacy Policy (DE)",
   submitButtonText: "Submit",
 
   nameRequired: "Name is required",

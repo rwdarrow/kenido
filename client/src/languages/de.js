@@ -12,7 +12,7 @@ const de = {
   emailInputLabel: "E-Mail",
   messageInputLabel: "Nachricht",
   acknowledgementInputLabel: "Es gilt die ",
-  privacyPolicy: "Datenschutzerklärung",
+  privacyPolicyLink: "Datenschutzerklärung",
   submitButtonText: "Absenden",
 
   nameRequired: "Name ist erforderlich!",

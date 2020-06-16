@@ -1,6 +1,6 @@
 import React from "react";
 
-import { LanguageContext } from "../../containers/language"
+import { LanguageContext } from "../../containers/language";
 
 import {
   BackgroundContainer,
@@ -9,6 +9,23 @@ import {
   ReturnToTopButton,
   ReturnToTopIcon,
 } from "./with-text-container.styles";
+
+const boxVariants = {
+  hidden: {
+    opacity: 0,
+    transition: {
+      duration: 1,
+    },
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+      when: "beforeChildren",
+      staggerChildren: 0.1,
+    },
+  },
+};
 
 const WithTextContainer = (WrappedComponent, otherProps) => {
   return class extends React.Component {
@@ -42,9 +59,15 @@ const WithTextContainer = (WrappedComponent, otherProps) => {
 
     render() {
       let language = this.context;
+
       return (
         <BackgroundContainer>
-          <BoxContainer>
+          <BoxContainer
+            variants={boxVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+          >
             <ReturnToTopButton
               hidden={this.state.returnToTopHidden}
               onClick={this.handleReturnToTop}

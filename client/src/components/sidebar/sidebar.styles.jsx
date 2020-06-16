@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { Link } from "react-router-dom"
 import { Close } from "@styled-icons/material"
 
 import { motion } from "framer-motion"
@@ -33,7 +32,7 @@ export const CloseButton = styled(Close)`
   }
 `
 
-export const SidebarOption = styled(Link)`
+export const SidebarOption = styled(motion.a)`
   cursor: pointer;
   transition: all 300ms ease-in-out;
   font-size: 40px;

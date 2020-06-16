@@ -1,10 +1,12 @@
-import React, { useState, useContext } from "react";
-import ReactModal from "react-modal";
+import React, { useContext } from "react";
+import { PropTypes } from "prop-types";
+import { AnimatePresence } from "framer-motion";
 
 import { languageOptions } from "../../languages";
 import { LanguageContext } from "../../containers/language";
 
 import {
+  ModalContainer,
   ModalContentContainer,
   InstructionLabel,
   Separator,
@@ -12,35 +14,40 @@ import {
   LanguageOption,
 } from "./language-selector-modal.styles";
 
-const styles = {
-  overlay: {
-    position: "fixed",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: "rgba(0, 0, 0, 0.6)",
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+    transition: {
+      delay: 0.5,
+      duration: 0.5,
+    },
   },
-  content: {
-    position: "absolute",
-    top: "25vh",
-    left: "15vw",
-    right: "15vw",
-    bottom: "25vh",
-    border: "none",
-    background: "var(--kn-red)",
-    boxShadow:
-      "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-    overflow: "auto",
-    WebkitOverflowScrolling: "touch",
-    borderRadius: "0px",
-    outline: "none",
-    padding: "20px",
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 1,
+      duration: 0.5,
+      when: "beforeChildren",
+    },
   },
 };
 
-const LanguageSelectorModal = () => {
-  const [modalOpen, setModalOpen] = useState(true);
+const modalVariants = {
+  hidden: {
+    x: "-100vw",
+    transition: {
+      type: "spring",
+    },
+  },
+  visible: {
+    x: "0%",
+    transition: {
+      type: "spring",
+    },
+  },
+};
+
+const LanguageSelectorModal = ({ showModal, setShowModal }) => {
   const languageContext = useContext(LanguageContext);
 
   const handleLanguageChange = (language) => {
@@ -51,31 +58,40 @@ const LanguageSelectorModal = () => {
     // set selected language by calling context method
     languageContext.setLanguage(selectedLanguage);
     window.localStorage.setItem("language", JSON.stringify(selectedLanguage));
-    setModalOpen(false);
+    setShowModal(false);
   };
 
   return (
-    <ReactModal
-      id="languageModal"
-      contentLabel="Choose language"
-      isOpen={modalOpen}
-      style={styles}
-    >
-      <ModalContentContainer>
-        <InstructionLabel>Please choose your language</InstructionLabel>
-        <InstructionLabel>Bitte wählen Sie Ihre Sprache</InstructionLabel>
-        <Separator />
-        <LanguageSelectorContainer>
-          <LanguageOption onClick={() => handleLanguageChange("en")}>
-            English
-          </LanguageOption>
-          <LanguageOption onClick={() => handleLanguageChange("de")}>
-            Deutsch
-          </LanguageOption>
-        </LanguageSelectorContainer>
-      </ModalContentContainer>
-    </ReactModal>
+    <AnimatePresence exitBeforeEnter>
+      {showModal && (
+        <ModalContainer
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+        >
+          <ModalContentContainer variants={modalVariants}>
+            <InstructionLabel>Please choose your language</InstructionLabel>
+            <InstructionLabel>Bitte wählen Sie Ihre Sprache</InstructionLabel>
+            <Separator />
+            <LanguageSelectorContainer>
+              <LanguageOption onClick={() => handleLanguageChange("en")}>
+                English
+              </LanguageOption>
+              <LanguageOption onClick={() => handleLanguageChange("de")}>
+                Deutsch
+              </LanguageOption>
+            </LanguageSelectorContainer>
+          </ModalContentContainer>
+        </ModalContainer>
+      )}
+    </AnimatePresence>
   );
+};
+
+LanguageSelectorModal.propTypes = {
+  showModal: PropTypes.bool.isRequired,
+  setShowModal: PropTypes.func.isRequired,
 };
 
 export default LanguageSelectorModal;

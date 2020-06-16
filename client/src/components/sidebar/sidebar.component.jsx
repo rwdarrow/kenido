@@ -1,5 +1,6 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { PropTypes } from "prop-types";
+import { withRouter, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
@@ -22,33 +23,40 @@ const sidebarVariants = {
     x: "-100%",
     transition: {
       ease: "easeInOut",
-      when: "afterChildren"
-    }
+    },
   },
   visible: {
     x: "0%",
     transition: {
       ease: "easeInOut",
       when: "beforeChildren",
-      staggerChildren: 0.2
-    }
-  }
-}
+    },
+  },
+};
+
+const sidebarContentVariants = {
+  visible: {
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.1,
+    },
+  },
+};
 
 const childVariants = {
   hidden: {
     opacity: 0,
     transition: {
-      duration: 0.3
-    }
+      duration: 0.3,
+    },
   },
   visible: {
     opacity: 1,
     transition: {
-      duration: 0.3
-    }
-  }
-}
+      duration: 0.3,
+    },
+  },
+};
 
 const Sidebar = ({ sidebarHidden, toggleSidebarHidden }) => (
   <SidebarContainer
@@ -56,24 +64,37 @@ const Sidebar = ({ sidebarHidden, toggleSidebarHidden }) => (
     initial={false}
     animate={sidebarHidden ? "hidden" : "visible"}
   >
-    <SidebarContentContainer variants={childVariants}>
+    <SidebarContentContainer variants={sidebarContentVariants}>
       <CloseButton onClick={toggleSidebarHidden} />
-      <SidebarOption to="/shop" onClick={toggleSidebarHidden}>
-        <Text tid="shop" />
-      </SidebarOption>
-      <SidebarOption to="/about" onClick={toggleSidebarHidden}>
-        <Text tid="about" />
-      </SidebarOption>
-      <SidebarOption to="/care" onClick={toggleSidebarHidden}>
-        <Text tid="care" />
-      </SidebarOption>
-      <SidebarOption to="/contact" onClick={toggleSidebarHidden}>
-        <Text tid="contact" />
-      </SidebarOption>
+      <Link to="/shop" onClick={toggleSidebarHidden}>
+        <SidebarOption variants={childVariants}>
+          <Text tid="shop" />
+        </SidebarOption>
+      </Link>
+      <Link to="/about" onClick={toggleSidebarHidden}>
+        <SidebarOption variants={childVariants}>
+          <Text tid="about" />
+        </SidebarOption>
+      </Link>
+      <Link to="/care" onClick={toggleSidebarHidden}>
+        <SidebarOption variants={childVariants}>
+          <Text tid="care" />
+        </SidebarOption>
+      </Link>
+      <Link to="/contact" onClick={toggleSidebarHidden}>
+        <SidebarOption variants={childVariants}>
+          <Text tid="contact" />
+        </SidebarOption>
+      </Link>
     </SidebarContentContainer>
-    <LanguageSelector variants={childVariants}/>
+    <LanguageSelector variants={childVariants} />
   </SidebarContainer>
 );
+
+Sidebar.propTypes = {
+  sidebarHidden: PropTypes.bool.isRequired,
+  toggleSidebarHidden: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = createStructuredSelector({
   sidebarHidden: selectSidebarHidden,

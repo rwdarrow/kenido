@@ -45,7 +45,7 @@ const Slideshow = ({ sections }) => {
 
   const paginate = useCallback((newDirection) => {
     setPage([page + newDirection, newDirection]);
-  });
+  }, [setPage, page]);
 
   // animate the slideshow every 7 seconds
   useEffect(() => {

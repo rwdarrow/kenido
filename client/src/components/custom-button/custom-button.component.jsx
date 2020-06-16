@@ -21,7 +21,9 @@ const CustomButton = ({ children, route, history }) => {
 };
 
 CustomButton.propTypes = {
-  route: PropTypes.string,
+  children: PropTypes.object.isRequired,
+  route: PropTypes.string.isRequired,
+  history: PropTypes.string.isRequired,
 };
 
 export default withRouter(CustomButton);
