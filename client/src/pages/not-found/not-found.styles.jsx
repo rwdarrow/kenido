@@ -2,12 +2,18 @@ import styled from "styled-components";
 
 import notFoundBackground from "../../assets/images/not-found-background.jpg"
 
+export const NotFoundPageContainer = styled.div`
+  overflow-y: scroll;
+  position: relative;
+  height: 100vh;
+  z-index: 0;
+`
+
 export const ImageContainer = styled.div`
   height: 100vh;
   background-size: cover;
   background-position: center 25%;
   background-image: url(${notFoundBackground});
-  position: absolute;
   width: 100vw;
 
   display: flex;

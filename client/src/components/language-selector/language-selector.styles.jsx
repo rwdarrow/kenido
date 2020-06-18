@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-import { motion } from "framer-motion"
-
-export const SelectorContainer = styled(motion.div)`
+export const SelectorContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
   background-color: transparent;
@@ -10,17 +8,17 @@ export const SelectorContainer = styled(motion.div)`
 
 export const LanguageOption = styled.button`
   background-color: transparent;
-  font-size: 35px;
+  font-size: 20px;
   cursor: pointer;
   transition: color 300ms ease-in-out, border-color 300ms ease-in-out;
 
   border-style: ${(props) => (props.selected ? "solid" : "none")};
-  border-width: 5px;
+  border-width: 3px;
   border-color: white;
-  padding: 15px;
+  padding: 8px;
 
   &:hover {
-    color: black;
-    border-color: black;
+    color: var(--kn-red);
+    border-color: var(--kn-red);
   }
 `;

@@ -9,8 +9,6 @@ import { toggleSidebarHidden } from "../../redux/sidebar/sidebar.actions";
 
 import { Text } from "../../containers/language";
 
-import LanguageSelector from "../language-selector/language-selector.component";
-
 import {
   SidebarContainer,
   SidebarContentContainer,
@@ -87,7 +85,6 @@ const Sidebar = ({ sidebarHidden, toggleSidebarHidden }) => (
         </SidebarOption>
       </Link>
     </SidebarContentContainer>
-    <LanguageSelector variants={childVariants} />
   </SidebarContainer>
 );
 

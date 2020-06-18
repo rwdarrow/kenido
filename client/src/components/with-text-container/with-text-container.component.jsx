@@ -2,7 +2,11 @@ import React from "react";
 
 import { LanguageContext } from "../../containers/language";
 
+import Header from "../header/header.component";
+import Footer from "../footer/footer.component";
+
 import {
+  PageContainer,
   BackgroundContainer,
   BoxContainer,
   TextContainer,
@@ -47,7 +51,7 @@ const WithTextContainer = (WrappedComponent, otherProps) => {
 
     // when use clicks return to top button, reset text container div scroll position to 0
     handleReturnToTop = () => {
-      this.textContainerRef.current.scrollTop = 0;
+      this.textContainerRef.current.scrollTo({ top: 0, behavior: "smooth" });
     };
 
     // only show the return to top button when scrolled below starting position
@@ -61,28 +65,32 @@ const WithTextContainer = (WrappedComponent, otherProps) => {
       let language = this.context;
 
       return (
-        <BackgroundContainer>
-          <BoxContainer
-            variants={boxVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-          >
-            <ReturnToTopButton
-              hidden={this.state.returnToTopHidden}
-              onClick={this.handleReturnToTop}
-              title={language.dictionary.returnToTopButtonText}
+        <PageContainer>
+          <Header />
+          <BackgroundContainer>
+            <BoxContainer
+              variants={boxVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
             >
-              <ReturnToTopIcon />
-            </ReturnToTopButton>
-            <TextContainer
-              ref={this.textContainerRef}
-              onScroll={this.handleScroll}
-            >
-              <WrappedComponent {...this.otherProps} />
-            </TextContainer>
-          </BoxContainer>
-        </BackgroundContainer>
+              <ReturnToTopButton
+                hidden={this.state.returnToTopHidden}
+                onClick={this.handleReturnToTop}
+                title={language.dictionary.returnToTopButtonText}
+              >
+                <ReturnToTopIcon />
+              </ReturnToTopButton>
+              <TextContainer
+                ref={this.textContainerRef}
+                onScroll={this.handleScroll}
+              >
+                <WrappedComponent {...this.otherProps} />
+              </TextContainer>
+            </BoxContainer>
+          </BackgroundContainer>
+          <Footer />
+        </PageContainer>
       );
     }
   };

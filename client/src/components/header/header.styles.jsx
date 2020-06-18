@@ -13,6 +13,7 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   margin: 25px 0 25px 0;
   position: absolute;
+  z-index: 1;
 `;
 
 export const LeftContentContainer = styled(motion.div)`
@@ -38,6 +39,7 @@ export const LogoContainer = styled(Link)`
   text-decoration: none;
   position: relative;
   cursor: pointer;
+  overflow: hidden;
 `;
 
 export const RightContentContainer = styled(motion.button)`

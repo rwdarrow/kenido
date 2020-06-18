@@ -4,8 +4,15 @@ import { motion } from "framer-motion"
 
 import * as background from "../../assets/images/wool-texture.jpg";
 
+export const PageContainer = styled.div`
+  overflow-y: scroll;
+  position: relative;
+  height: 100vh;
+  z-index: 0;
+`
+
 export const BackgroundContainer = styled.div`
-  position: absolute;
+  position: relative;
   height: 100vh;
   width: 100vw;
   background-size: cover;

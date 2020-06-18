@@ -5,7 +5,6 @@ import { ChevronRight } from "@styled-icons/boxicons-regular/ChevronRight";
 import { motion } from "framer-motion";
 
 export const SlideshowContainer = styled.div`
-  position: absolute;
   background-color: black;
   overflow: hidden;
 `;
@@ -17,22 +16,21 @@ const zoomIn = keyframes`
   100% {
       transform: scale(1.1,1.1);
   }
-`
+`;
 
 export const PreviewImageContainer = styled(motion.div)`
   height: 100vh;
   width: 100vw;
   background-size: cover;
   background-position: center top;
-  animation: ${zoomIn} 18s forwards; 
-  
+  animation: ${zoomIn} 18s forwards;
 `;
 
 export const ButtonContainer = styled.div`
   display: flex;
   position: absolute;
   top: 60%;
-  width: 100vw;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
 `;

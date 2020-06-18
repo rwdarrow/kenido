@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
-import { PropTypes } from "prop-types";
 import { languageOptions } from "../../languages";
 import { LanguageContext } from "../../containers/language";
 
 import { SelectorContainer, LanguageOption } from "./language-selector.styles";
 
-const LanguageSelector = ({ variants }) => {
+const LanguageSelector = () => {
   const languageContext = useContext(LanguageContext);
 
   const handleLanguageChange = (event) => {
@@ -19,7 +18,7 @@ const LanguageSelector = ({ variants }) => {
   };
 
   return (
-    <SelectorContainer variants={variants}>
+    <SelectorContainer>
       {languageOptions.map((item) => (
         <LanguageOption
           key={item.id}
@@ -32,10 +31,6 @@ const LanguageSelector = ({ variants }) => {
       ))}
     </SelectorContainer>
   );
-};
-
-LanguageSelector.propTypes = {
-  variants: PropTypes.object.isRequired,
 };
 
 export default LanguageSelector;

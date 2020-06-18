@@ -45,12 +45,12 @@ const rightContainerVariants = {
   },
 };
 
-const Header = ({ itemCount, toggleSidebarHidden }) => (
+const Header = ({ itemCount, toggleSidebarHidden, playAnimation }) => (
   <>
     <HeaderContainer>
       <LeftContentContainer
         variants={leftContainerVariants}
-        initial="hidden"
+        initial={playAnimation ? "hidden" : "visible"}
         animate="visible"
       >
         <MenuButton onClick={toggleSidebarHidden} />
@@ -58,7 +58,7 @@ const Header = ({ itemCount, toggleSidebarHidden }) => (
       </LeftContentContainer>
       <RightContentContainer
         variants={rightContainerVariants}
-        initial="hidden"
+        initial={playAnimation ? "hidden" : "visible"}
         animate="visible"
       >
         <ShoppingBagContainer />
@@ -74,6 +74,7 @@ const Header = ({ itemCount, toggleSidebarHidden }) => (
 Header.propTypes = {
   itemCount: PropTypes.number,
   toggleSidebarHidden: PropTypes.func.isRequired,
+  playAnimation: PropTypes.bool
 };
 
 const mapDispatchToProps = (dispatch) => ({

@@ -5,11 +5,10 @@ import { LanguageProvider } from "./containers/language";
 
 import { GlobalStyle } from "./global.styles";
 
-import Header from "./components/header/header.component";
-import Footer from "./components/footer/footer.component";
 import LanguageSelectorModal from "./components/language-selector-modal/language-selector-modal.component";
 
 import HomePage from "./pages/home/home.component";
+import AboutPage from "./pages/about/about.component";
 import NotFoundPage from "./pages/not-found/not-found.component";
 import TermsAndCondsPage from "./pages/terms-and-conds/terms-and-conds.component";
 import ImpressumPage from "./pages/impressum/impressum.component";
@@ -34,9 +33,10 @@ const App = () => {
       <GlobalStyle />
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route exact path="/about" component={AboutPage} />
         <Route exact path="/agb" component={TermsAndCondsPage} />
         <Route exact path="/impressum" component={ImpressumPage} />
-        <Route exact path="/datenschutz" component={PrivacyPolicyPage} />
+        <Route exact path="/privacy" component={PrivacyPolicyPage} />
         <Route exact path="/cookies" component={CookiePolicyPage} />
         <Route exact path="/contact" component={ContactPage} />
         <Route
@@ -47,8 +47,6 @@ const App = () => {
         <Route exact path="/returns" component={ReturnsPage} />
         <Route component={NotFoundPage} />
       </Switch>
-      <Header />
-      <Footer />
       <LanguageSelectorModal
         showModal={showModal}
         setShowModal={setShowModal}
