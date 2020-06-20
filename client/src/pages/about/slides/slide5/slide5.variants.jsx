@@ -5,9 +5,9 @@ export const headlineContainerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      duration: 1,
+      duration: 0.6,
       when: "beforeChildren",
-      staggerChildren: 1,
+      staggerChildren: 0.6,
     },
   },
 };
@@ -17,7 +17,7 @@ export const headlineContainerChildVariants = {
   visible: {
     opacity: 1,
     transition: {
-      duration: 1,
+      duration: 0.6,
     },
   },
 };
@@ -27,8 +27,8 @@ export const bodyContainerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      duration: 1,
-      delay: 3,
+      duration: 0.6,
+      delay: 1.8,
       when: "beforeChildren",
       staggerChildren: 0.2,
     },
@@ -44,7 +44,7 @@ export const bodyContainerChildVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 1,
+      duration: 0.6,
     }
    },
 };

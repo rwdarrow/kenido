@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { BrowserView, MobileOnlyView } from "react-device-detect";
 
 import { connect } from "react-redux";
 import { toggleSidebarHidden } from "../../redux/sidebar/sidebar.actions";
@@ -14,6 +15,7 @@ import {
   RightContentContainer,
   ShoppingBagContainer,
   ItemCountContainer,
+  MobileHeaderContainer,
 } from "./header.styles";
 
 const leftContainerVariants = {
@@ -47,34 +49,43 @@ const rightContainerVariants = {
 
 const Header = ({ itemCount, toggleSidebarHidden, playAnimation }) => (
   <>
-    <HeaderContainer>
-      <LeftContentContainer
-        variants={leftContainerVariants}
-        initial={playAnimation ? "hidden" : "visible"}
-        animate="visible"
-      >
+    <BrowserView>
+      <HeaderContainer>
+        <LeftContentContainer
+          variants={leftContainerVariants}
+          initial={playAnimation ? "hidden" : "visible"}
+          animate="visible"
+        >
+          <MenuButton onClick={toggleSidebarHidden} />
+          <LogoContainer to="/">KENIDO</LogoContainer>
+        </LeftContentContainer>
+        <RightContentContainer
+          variants={rightContainerVariants}
+          initial={playAnimation ? "hidden" : "visible"}
+          animate="visible"
+        >
+          <ShoppingBagContainer />
+          <ItemCountContainer itemCount={itemCount}>
+            {itemCount}
+          </ItemCountContainer>
+        </RightContentContainer>
+      </HeaderContainer>
+      <Sidebar />
+    </BrowserView>
+    <MobileOnlyView>
+      <MobileHeaderContainer>
         <MenuButton onClick={toggleSidebarHidden} />
         <LogoContainer to="/">KENIDO</LogoContainer>
-      </LeftContentContainer>
-      <RightContentContainer
-        variants={rightContainerVariants}
-        initial={playAnimation ? "hidden" : "visible"}
-        animate="visible"
-      >
         <ShoppingBagContainer />
-        <ItemCountContainer itemCount={itemCount}>
-          {itemCount}
-        </ItemCountContainer>
-      </RightContentContainer>
-    </HeaderContainer>
-    <Sidebar />
+      </MobileHeaderContainer>
+    </MobileOnlyView>
   </>
 );
 
 Header.propTypes = {
   itemCount: PropTypes.number,
   toggleSidebarHidden: PropTypes.func.isRequired,
-  playAnimation: PropTypes.bool
+  playAnimation: PropTypes.bool,
 };
 
 const mapDispatchToProps = (dispatch) => ({

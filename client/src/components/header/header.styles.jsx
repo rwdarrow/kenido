@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import { Menu } from "@styled-icons/material";
 import { ShoppingBag } from "@styled-icons/feather/ShoppingBag";
 
+// Styles for desktop view
 export const HeaderContainer = styled.div`
   height: 70px;
   width: 100%;
@@ -23,6 +24,7 @@ export const LeftContentContainer = styled(motion.div)`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  align-items: center;
   background-color: var(--kn-red);
 `;
 
@@ -30,6 +32,10 @@ export const MenuButton = styled(Menu)`
   height: 100%;
   cursor: pointer;
   background-color: transparent;
+
+  @media only screen and (max-width: 600px) {
+    height: 15vw;
+  }
 `;
 
 export const LogoContainer = styled(Link)`
@@ -40,6 +46,10 @@ export const LogoContainer = styled(Link)`
   position: relative;
   cursor: pointer;
   overflow: hidden;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 15vw;
+  }
 `;
 
 export const RightContentContainer = styled(motion.button)`
@@ -61,6 +71,10 @@ export const RightContentContainer = styled(motion.button)`
 export const ShoppingBagContainer = styled(ShoppingBag)`
   height: 70%;
   background-color: transparent;
+
+  @media only screen and (max-width: 600px) {
+    height: 12vw;
+  }
 `;
 
 export const ItemCountContainer = styled.span`
@@ -68,3 +82,18 @@ export const ItemCountContainer = styled.span`
   font-size: 25px;
   display: ${(props) => (props.itemCount > 0 ? "inline" : "none")};
 `;
+
+// styles for mobile view
+export const MobileHeaderContainer = styled.div`
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 1;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--kn-red);
+`

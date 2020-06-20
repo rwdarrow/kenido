@@ -14,7 +14,7 @@ export const PageContainer = styled.div`
 export const BackgroundContainer = styled.div`
   position: relative;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   background-size: cover;
   background-position: center;
   background-image: url(${background});

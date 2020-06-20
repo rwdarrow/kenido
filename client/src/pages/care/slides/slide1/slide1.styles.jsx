@@ -1,48 +1,42 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from "styled-components" 
 import { ChevronDown } from "@styled-icons/boxicons-solid/ChevronDown";
 
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"
 
-import * as aboutImage from "../../../../assets/images/about.jpg";
+export const SlideContentContainer = styled(motion.div)`
+  width: 75%;
+  max-width: 1400px;
 
-export const ImageContainer = styled(motion.div)`
-  width: 50%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-image: url(${aboutImage});
-  box-shadow: 10px 0px 35px 0px rgba(0,0,0,0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-left: 100px;
 `;
 
-export const TextContainer = styled(motion.div)`
-  width: 50%;
+export const HeadlineContainer = styled(motion.div)`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 40px;
-`
-
-export const TitleContainer = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin-bottom: 50px;
 `;
 
-export const Title = styled(motion.div)`
-  font-size: 45px;
+export const Headline = styled(motion.div)`
+  font-size: 60px;
 `;
 
 export const BodyContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
+  max-width: 700px;
 `;
 
 export const Paragraph = styled(motion.div)`
-  font-size: 25px;
+  font-size: 28px;
+  margin-bottom: 50px;
+  text-align: left;
+`;
+
+export const WelcomeContainer = styled(motion.div)`
+  font-size: 60px;
   margin-bottom: 50px;
   text-align: center;
 `;

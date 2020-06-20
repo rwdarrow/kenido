@@ -1,7 +1,7 @@
 import React from "react";
 
 import WithTextContainer from "../../components/with-text-container/with-text-container.component";
-import Separator from "../../components/separator/separator.component"
+import Separator from "../../components/separator/separator.component";
 
 const ReturnsPage = () => (
   <>
@@ -149,6 +149,12 @@ const ReturnsPage = () => (
       Verbraucher(s) (nur bei Mitteilung auf Papier) Datum (*) Unzutreffendes
       streichen
     </p>
+    <a
+      href="https://www.kenido.de/j/shop/withdrawalpdfdownload"
+      style={{ textDecoration: "underline", cursor: "pointer" }}
+    >
+      Muster-Widerrufsformular herunterladen
+    </a>
   </>
 );
 

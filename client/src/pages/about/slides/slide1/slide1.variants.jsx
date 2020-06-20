@@ -10,8 +10,8 @@ export const imageContainerVariants = {
     opacity: 1,
     x: "0%",
     transition: {
-      delay: 2,
-      duration: 1,
+      delay: 1.2,
+      duration: 0.6,
     },
   },
 };
@@ -24,7 +24,7 @@ export const titleContainerVariants = {
     opacity: 1,
     transition: {
       when: "beforeChildren",
-      staggerChildren: 3,
+      staggerChildren: 1.8,
     },
   },
 };
@@ -39,7 +39,7 @@ export const titleContainerChildVariants = {
   visible: {
     opacity: 1,
     transition: {
-      duration: 1,
+      duration: 0.6,
     },
   },
 };
@@ -49,8 +49,8 @@ export const bodyContainerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      duration: 1,
-      delay: 4,
+      duration: 0.6,
+      delay: 2,
       when: "beforeChildren",
       staggerChildren: 0.2,
     },
@@ -66,7 +66,7 @@ export const bodyContainerChildVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 1,
+      duration: 0.6,
     },
   },
 };

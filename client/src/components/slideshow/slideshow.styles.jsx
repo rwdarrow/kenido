@@ -33,6 +33,10 @@ export const ButtonContainer = styled.div`
   width: 100%;
   justify-content: space-between;
   align-items: center;
+
+  @media only screen and (max-width: 600px) {
+    justify-content: center;
+  }
 `;
 
 export const LeftSlideshowButton = styled(motion.button)`
@@ -46,6 +50,10 @@ export const LeftSlideshowButton = styled(motion.button)`
   &:hover {
     background-color: black;
   }
+
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
 `;
 
 export const RightSlideshowButton = styled(motion.button)`
@@ -58,6 +66,10 @@ export const RightSlideshowButton = styled(motion.button)`
 
   &:hover {
     background-color: black;
+  }
+
+  @media only screen and (max-width: 600px) {
+    display: none;
   }
 `;
 

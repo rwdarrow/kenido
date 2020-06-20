@@ -3,6 +3,7 @@ import { PropTypes } from "prop-types";
 import { withRouter, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
+import { isMobileOnly } from "react-device-detect";
 
 import { selectSidebarHidden } from "../../redux/sidebar/sidebar.selectors";
 import { toggleSidebarHidden } from "../../redux/sidebar/sidebar.actions";
@@ -20,12 +21,14 @@ const sidebarVariants = {
   hidden: {
     x: "-100%",
     transition: {
+      duration: 0.25,
       ease: "easeInOut",
     },
   },
   visible: {
     x: "0%",
     transition: {
+      duration: 0.25,
       ease: "easeInOut",
       when: "beforeChildren",
     },
@@ -56,6 +59,12 @@ const childVariants = {
   },
 };
 
+// dummy variants to disable animations on mobile
+const mobileVariants = {
+  hidden: {},
+  visible: {},
+};
+
 const Sidebar = ({ sidebarHidden, toggleSidebarHidden }) => (
   <SidebarContainer
     variants={sidebarVariants}
@@ -65,22 +74,22 @@ const Sidebar = ({ sidebarHidden, toggleSidebarHidden }) => (
     <SidebarContentContainer variants={sidebarContentVariants}>
       <CloseButton onClick={toggleSidebarHidden} />
       <Link to="/shop" onClick={toggleSidebarHidden}>
-        <SidebarOption variants={childVariants}>
+        <SidebarOption variants={isMobileOnly ? mobileVariants : childVariants}>
           <Text tid="shop" />
         </SidebarOption>
       </Link>
       <Link to="/about" onClick={toggleSidebarHidden}>
-        <SidebarOption variants={childVariants}>
+        <SidebarOption variants={isMobileOnly ? mobileVariants : childVariants}>
           <Text tid="about" />
         </SidebarOption>
       </Link>
-      <Link to="/care" onClick={toggleSidebarHidden}>
-        <SidebarOption variants={childVariants}>
+      <Link to="/alpaca-wool-and-care" onClick={toggleSidebarHidden}>
+        <SidebarOption variants={isMobileOnly ? mobileVariants : childVariants}>
           <Text tid="care" />
         </SidebarOption>
       </Link>
       <Link to="/contact" onClick={toggleSidebarHidden}>
-        <SidebarOption variants={childVariants}>
+        <SidebarOption variants={isMobileOnly ? mobileVariants : childVariants}>
           <Text tid="contact" />
         </SidebarOption>
       </Link>

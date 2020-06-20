@@ -10,15 +10,29 @@ export const SlideContentContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media only screen and (max-width: 600px) {
+    width: 75%;
+  }
 `;
 
 export const HeadlineContainer = styled(motion.div)`
   display: flex;
   margin-bottom: 50px;
+
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
 `;
 
 export const Headline = styled(motion.div)`
   font-size: 60px;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 40px;
+  }
 `;
 
 export const BodyContainer = styled(motion.div)`
@@ -31,12 +45,22 @@ export const Paragraph = styled(motion.div)`
   font-size: 30px;
   margin-bottom: 50px;
   text-align: center;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
 `;
 
 export const WelcomeContainer = styled(motion.div)`
   font-size: 60px;
   margin-bottom: 50px;
   text-align: center;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
 `;
 
 export const ScrollDownButtonContainer = styled(motion.button)`

@@ -4,6 +4,7 @@ import notFoundBackground from "../../assets/images/not-found-background.jpg"
 
 export const NotFoundPageContainer = styled.div`
   overflow-y: scroll;
+  overflow-x: hidden;
   position: relative;
   height: 100vh;
   z-index: 0;

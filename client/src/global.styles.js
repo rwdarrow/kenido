@@ -24,6 +24,7 @@ export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
     color: white;
+    font-size-adjust: 0.5;
   }
 
   table {

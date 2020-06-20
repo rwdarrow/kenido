@@ -9,17 +9,16 @@ import {
   Headline,
   BodyContainer,
   Paragraph,
-  WelcomeContainer,
   ScrollDownButtonContainer,
   ScrollDownIcon
-} from "./intro.styles";
+} from "./slide1.styles";
 
 import {
   headlineContainerVariants,
   headlineContainerChildVariants,
   bodyContainerVariants,
   bodyContainerChildVariants,
-} from "./intro.variants";
+} from "./slide1.variants";
 
 const IntroSlide = ({ playAnimations }) => (
   <SlideContentContainer>
@@ -29,15 +28,11 @@ const IntroSlide = ({ playAnimations }) => (
       animate={playAnimations ? "visible" : "hidden"}
     >
       <Headline variants={headlineContainerChildVariants}>
-        <Text tid="aboutHeadline1" />
+        <Text tid="careHeadline1" />
         &nbsp;&nbsp;
       </Headline>
       <Headline variants={headlineContainerChildVariants}>
-        <Text tid="aboutHeadline2" />
-        &nbsp;&nbsp;
-      </Headline>
-      <Headline variants={headlineContainerChildVariants}>
-        <Text tid="aboutHeadline3" />
+        <Text tid="careHeadline2" />
       </Headline>
     </HeadlineContainer>
     <BodyContainer
@@ -46,17 +41,14 @@ const IntroSlide = ({ playAnimations }) => (
       animate={playAnimations ? "visible" : "hidden"}
     >
       <Paragraph variants={bodyContainerChildVariants}>
-        <Text tid="about1" />
+        <Text tid="careBody1" />
       </Paragraph>
       <Paragraph variants={bodyContainerChildVariants}>
-        <Text tid="about2" />
+        <Text tid="careBody2" />
       </Paragraph>
       <Paragraph variants={bodyContainerChildVariants}>
-        <Text tid="about3" />
+        <Text tid="careBody3" />
       </Paragraph>
-      <WelcomeContainer variants={bodyContainerChildVariants}>
-        <Text tid="welcomeKenido" />
-      </WelcomeContainer>
       <ScrollDownButtonContainer variants={bodyContainerChildVariants}>
         <ScrollDownIcon />
       </ScrollDownButtonContainer>

@@ -6,38 +6,103 @@ object files in this folder.
 
 // components are listed in alphabetical order
 const en = {
-  // about page 
-  headline1: "ELEGANCE.",
-  headline2: "QUALITY.",
-  headline3: "FREEDOM.",
+  // about page
+  aboutHeadline1: "ELEGANCE.",
+  aboutHeadline2: "QUALITY.",
+  aboutHeadline3: "FREEDOM.",
 
-  about1: "We brought this vision to life with heart and soul. We believe life is worth living. That the body and soul need warmth, joy, finesse, passion, feeling, and the freedom to find new paths and adventures.",
+  about1: `We brought this vision to life with heart and soul. We believe 
+          life is worth living. That the body and soul need warmth, joy, 
+          finesse, passion, feeling, and the freedom to find new paths 
+          and adventures.`,
+
   about2: "We want to share this vision with you.",
-  about3: "KENIDO stands for quality, design, environmental awareness, and a strong belief that tradition and innovation go hand in hand.",
+  about3: `KENIDO stands for quality, design, environmental awareness, and 
+          a strong belief that tradition and innovation go hand in hand.`,
 
   welcomeKenido: "Welcome to the world of Alpaca fasion",
 
   kenidoIs: "KENIDO is...",
   aFamilyBusiness: "...a family business.",
 
-  aboutFamily: "The Cachay/Garcia Family has a long tradition in the textile business. Here are some key moments in our history:",
+  aboutFamily: `The Cachay/Garcia Family has a long tradition in the 
+                textile business. Here are some key moments in our history:`,
 
   about80sHeadline: "1980s:",
-  about80sBody: "It all began with a man, Erasmo Cachay Diaz, and his dream to bring good tailoring work to the people.", 
+  about80sBody: `It all began with a man, Erasmo Cachay Diaz, and his 
+                dream to bring good tailoring work to the people.`,
 
   about90sHeadline: "1990s:",
   about90sBody: "Economic crisis. The dream was temporarily on stand-by.",
 
   about2000sHeadline: "2000s:",
-  about2000sBody: "The storm has past. People are discovering that not simply blind productivity, but craftsmanship, tradition, and quality coupled with environmental awareness is the way forward.",
+  about2000sBody: `The storm has past. People are discovering that not 
+                  simply blind productivity, but craftsmanship, tradition, 
+                  and quality coupled with environmental awareness is the 
+                  way forward.`,
 
   about2019Headline1: "2019:",
   about2019Headline2: "Rebirth",
-  about2019Body1: "The dream lives on, now in its second generation. The Cachay/Garcia Family believes family should be at the heart of business, and that their name represents quality and customer service from an international perspective. They are blending the traditions of Peru, Germany, and Spain in a unique way.",
-  about2019Body2: "Since 2019, through their company ERCAMI OHG, the Cachay/Garcia Family see themselves as the bridge between Peru and Europe. ERCAMI OHG is a Peruvian/Spanish family business based in Stuttgart, Germany, and is the owner of the KENIDO brand.",
 
-  aboutMotto: "Our motto \"Born in Peru... raised in Europe\" exemplifies our vision: to bring the Peruvian textile tradition together with the fashion sense and elegance of Europe, but also something very special: to show that family business has lost nothing of its strength.",
+  about2019Body1: `The dream lives on, now in its second generation. The 
+                  Cachay/Garcia Family believes family should be at the 
+                  heart of business, and that their name represents quality 
+                  and customer service from an international perspective. 
+                  They are blending the traditions of Peru, Germany, and 
+                  Spain in a unique way.`,
+
+  about2019Body2: `Since 2019, through their company ERCAMI OHG, the 
+                  Cachay/Garcia Family see themselves as the bridge between 
+                  Peru and Europe. ERCAMI OHG is a Peruvian/Spanish family 
+                  business based in Stuttgart, Germany, and is the owner of 
+                  the KENIDO brand.`,
+
+  aboutMotto: `Our motto "Born in Peru... raised in Europe" exemplifies 
+              our vision: to bring the Peruvian textile tradition together 
+              with the fashion sense and elegance of Europe, but also 
+              something very special: to show that family business has 
+              lost nothing of its strength.`,
+
   welcomeFamily: "Welcome to the KENIDO Family!",
+
+  // care page
+  careHeadline1: "ALPACA...",
+  careHeadline2: "THE NEW CASHMERE",
+
+  careBody1: `Alpaca wool is one of the finest and most luxurious materials 
+              in the world.`,
+
+  careBody2: `Although cashmere is more well known, alpaca wool also belongs 
+              to a select group of fine and luxurious fibers. Wearing alpaca 
+              isn't just fashion statement... it's an experience.`,
+
+  careBody3: `What makes it so unique and special? Alpaca wool is the 
+              natural result of the environment of the alpaca's habitat in 
+              The Peruvian Andes (over 4000 meters above sea level). Where 
+              the icey temperatures live in harmony with sunny days, nature 
+              itself has created the perfect wool formula: warm, soft and 
+              cozy, combined with the best sun protection and excellent 
+              texture. You will be wearing something which back in ancient 
+              times was only accessible to kings and queens. Tradition 
+              reaching modern times in a unique way.`,
+
+  careBody4: `The alpaca comes from the South American Andes, like the 
+              llamas and vicuñas.`,
+
+  careBody5: `The domestication of alpacas began about 3,000 years ago in 
+              the Andean highlands. During the ancient rule of the Inca 
+              Empire, alpaca wool was considered the "fiber of the gods".`,
+
+  careBody6: `Alpacas are intelligent, curious, sensitive and known cautious 
+              animals (you could even call them shy). Basically, alpacas are 
+              divided into 2 groups: the Suri alpaca (a typical feature of 
+              them is their wonderful, soft, curly wool) and the Huacaya
+               alpaka (with their consistent fibers). These 2 groups 
+               represent the majority of the alpaca population.`,
+
+  careBody7: `Alpacas are social herd animals and require very little pasture 
+              land - making them a very environmentally friendly and safe 
+              wool producer.`,
 
   // contact form
   contactForm: "CONTACT US",
@@ -82,13 +147,18 @@ const en = {
   language: "LANGUAGE",
 
   madeWithLove: "Made with 💗 by ",
-  
+
   // checkout
-  checkoutFineprint_1: "[1] Applies to deliveries within Germany. See Ordering and Payment for delivery times for other countries and information on calculation of delivery dates.",
-  checkoutFineprint_2: "[2] No sales tax is charged in accordance with Section 19 (1) of the UStG.",
+  checkoutFineprint_1: `[1] Applies to deliveries within Germany. See 
+                        Ordering and Payment for delivery times for other 
+                        countries and information on calculation of delivery 
+                        dates.`,
+
+  checkoutFineprint_2: `[2] No sales tax is charged in accordance with 
+                        Section 19 (1) of the UStG.`,
 
   // >>>> MISC <<<<
-  returnToTopButtonText: "Return to top"
-}
+  returnToTopButtonText: "Return to top",
+};
 
 export default en;

@@ -17,6 +17,7 @@ import CookiePolicyPage from "./pages/cookie-policy/cookie-policy.component";
 import OrderingAndPaymentPage from "./pages/ordering-and-payment/ordering-and-payment.component";
 import ReturnsPage from "./pages/returns/returns.component";
 import ContactPage from "./pages/contact/contact.component";
+import CarePage from "./pages/care/care.component"
 
 const App = () => {
   const [showModal, setShowModal] = useState(false);
@@ -39,11 +40,8 @@ const App = () => {
         <Route exact path="/privacy" component={PrivacyPolicyPage} />
         <Route exact path="/cookies" component={CookiePolicyPage} />
         <Route exact path="/contact" component={ContactPage} />
-        <Route
-          exact
-          path="/ordering_and_payment"
-          component={OrderingAndPaymentPage}
-        />
+        <Route exact path="/ordering-and-payment" component={OrderingAndPaymentPage}/>
+        <Route exact path="/alpaca-wool-and-care" component={CarePage} />
         <Route exact path="/returns" component={ReturnsPage} />
         <Route component={NotFoundPage} />
       </Switch>

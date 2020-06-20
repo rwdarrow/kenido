@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FullPage, Slide } from "react-full-page";
+import { BrowserView, MobileOnlyView } from "react-device-detect";
 
 import Header from "../../components/header/header.component";
 import IntroSlide from "./slides/intro/intro.component";
@@ -9,52 +10,64 @@ import Slide3 from "./slides/slide3/slide3.component";
 import Slide4 from "./slides/slide4/slide4.component";
 import Slide5 from "./slides/slide5/slide5.component";
 import Footer from "../../components/footer/footer.component";
+import ReturnToTopButton from "../../components/return-to-top-button/return-to-top-button.component";
 
 import { introSlideStyles, slide1Styles, slide2Styles } from "./about.styles";
-import ReturnToTopButton from "../../components/return-to-top-button/return-to-top-button.component";
 
 const AboutPage = () => {
   const [animate, setAnimate] = useState(false);
 
+  // Render the first view if the device is a mobile device 
+  // (does not include tablets), otherwise render the desktop view
   return (
     <>
       <Header />
-      <FullPage
-        // trigger animation on slides whenever a scroll happens
-        beforeChange={() => setAnimate(false)}
-        afterChange={() => setAnimate(true)}
-      >
-        <Slide style={introSlideStyles}>
-          <IntroSlide playAnimations={animate} />
-        </Slide>
-        <Slide style={slide1Styles}>
-          <Slide1 playAnimations={animate} />
-        </Slide>
-        <Slide style={slide2Styles}>
-          <Slide2 playAnimations={animate} />
-        </Slide>
-        <Slide style={slide1Styles}>
-          <Slide3 playAnimations={animate} />
-        </Slide>
-        <Slide style={slide2Styles}>
-          <Slide4 playAnimations={animate} />
-        </Slide>
-        <Slide
-          style={{ ...introSlideStyles, backgroundColor: "var(--kn-red)" }}
+      <BrowserView>
+        <FullPage
+          // trigger animation on slides whenever a scroll happens
+          beforeChange={() => setAnimate(false)}
+          afterChange={() => setAnimate(true)}
         >
-          <Slide5 playAnimations={animate} />
-        </Slide>
-        <Slide
-          style={{
-            display: "flex",
-            alignItems: "center",
-            backgroundColor: "black",
-          }}
-        >
-          <Footer />
-        </Slide>
-      </FullPage>
-      <ReturnToTopButton visible={true} />
+          <Slide style={introSlideStyles}>
+            <IntroSlide playAnimations={animate} />
+          </Slide>
+          <Slide style={slide1Styles}>
+            <Slide1 playAnimations={animate} />
+            <ReturnToTopButton visible={true} />
+          </Slide>
+          <Slide style={slide2Styles}>
+            <Slide2 playAnimations={animate} />
+            <ReturnToTopButton visible={true} />
+          </Slide>
+          <Slide style={slide1Styles}>
+            <Slide3 playAnimations={animate} />
+            <ReturnToTopButton visible={true} />
+          </Slide>
+          <Slide style={slide2Styles}>
+            <Slide4 playAnimations={animate} />
+            <ReturnToTopButton visible={true} />
+          </Slide>
+          <Slide
+            style={{ ...introSlideStyles, backgroundColor: "var(--kn-red)" }}
+          >
+            <Slide5 playAnimations={animate} />
+            <ReturnToTopButton visible={true} />
+          </Slide>
+          <Slide
+            style={{
+              display: "flex",
+              alignItems: "center",
+              backgroundColor: "black",
+            }}
+          >
+            <Footer />
+            <ReturnToTopButton visible={true} />
+          </Slide>
+        </FullPage>
+      </BrowserView>
+      <MobileOnlyView>
+
+      </MobileOnlyView>
     </>
   );
 };

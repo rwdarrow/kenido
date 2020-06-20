@@ -44,7 +44,7 @@ const Footer = () => (
         <FooterSectionItem to="/contact">
           <Text tid="contactUs" />
         </FooterSectionItem>
-        <FooterSectionItem to="/ordering_and_payment">
+        <FooterSectionItem to="/ordering-and-payment">
           <Text tid="ordering" />
         </FooterSectionItem>
         <FooterSectionItem to="/returns">
