@@ -30,7 +30,7 @@ export const FooterContent = styled.div`
   }
 `;
 
-export const FooterSection = styled.div`
+export const FooterSection = styled.nav`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;

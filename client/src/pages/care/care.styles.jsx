@@ -28,4 +28,6 @@ export const slide2Styles = {
 export const slide3Styles = {
   backgroundColor: "black",
   display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
 };

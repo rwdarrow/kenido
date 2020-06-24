@@ -19,7 +19,7 @@ import {
   bodyContainerChildVariants,
 } from "./slide5.variants";
 
-const IntroSlide = ({ playAnimations }) => (
+const Slide5 = ({ playAnimations }) => (
   <SlideContentContainer>
     <HeadlineContainer
       variants={headlineContainerVariants}
@@ -55,8 +55,8 @@ const IntroSlide = ({ playAnimations }) => (
   </SlideContentContainer>
 );
 
-IntroSlide.propTypes = {
+Slide5.propTypes = {
   playAnimations: PropTypes.bool.isRequired,
 };
 
-export default IntroSlide;
+export default Slide5;

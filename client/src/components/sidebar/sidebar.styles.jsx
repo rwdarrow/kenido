@@ -17,7 +17,7 @@ export const SidebarContainer = styled(motion.div)`
   }
 `;
 
-export const SidebarContentContainer = styled(motion.div)`
+export const SidebarContentContainer = styled(motion.nav)`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -25,7 +25,7 @@ export const SidebarContentContainer = styled(motion.div)`
 `;
 
 export const CloseButton = styled(Close)`
-  width: 2.5vw;
+  width: 50px;
   cursor: pointer;
   background-color: transparent;
   cursor: pointer;
@@ -46,7 +46,7 @@ export const CloseButton = styled(Close)`
 export const SidebarOption = styled(motion.a)`
   cursor: pointer;
   transition: all 300ms ease-in-out;
-  font-size: 2.5vw;
+  font-size: 50px;
 
   &:hover {
     color: black;

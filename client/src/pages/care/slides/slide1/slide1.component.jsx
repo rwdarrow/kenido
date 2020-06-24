@@ -28,11 +28,11 @@ const IntroSlide = ({ playAnimations }) => (
       animate={playAnimations ? "visible" : "hidden"}
     >
       <Headline variants={headlineContainerChildVariants}>
-        <Text tid="careHeadline1" />
+        <Text tid="alpacaHeadline1" />
         &nbsp;&nbsp;
       </Headline>
       <Headline variants={headlineContainerChildVariants}>
-        <Text tid="careHeadline2" />
+        <Text tid="alpacaHeadline2" />
       </Headline>
     </HeadlineContainer>
     <BodyContainer
@@ -41,13 +41,13 @@ const IntroSlide = ({ playAnimations }) => (
       animate={playAnimations ? "visible" : "hidden"}
     >
       <Paragraph variants={bodyContainerChildVariants}>
-        <Text tid="careBody1" />
+        <Text tid="alpacaBody1" />
       </Paragraph>
       <Paragraph variants={bodyContainerChildVariants}>
-        <Text tid="careBody2" />
+        <Text tid="alpacaBody2" />
       </Paragraph>
       <Paragraph variants={bodyContainerChildVariants}>
-        <Text tid="careBody3" />
+        <Text tid="alpacaBody3" />
       </Paragraph>
       <ScrollDownButtonContainer variants={bodyContainerChildVariants}>
         <ScrollDownIcon />

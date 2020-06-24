@@ -65,44 +65,86 @@ const en = {
 
   welcomeFamily: "Welcome to the KENIDO Family!",
 
-  // care page
-  careHeadline1: "ALPACA...",
-  careHeadline2: "THE NEW CASHMERE",
+  // alpaca wool and care page
+  alpacaHeadline1: "ALPACA...",
+  alpacaHeadline2: "THE NEW CASHMERE",
 
-  careBody1: `Alpaca wool is one of the finest and most luxurious materials 
+  alpacaBody1: `Alpaca wool is one of the finest and most luxurious materials 
               in the world.`,
 
-  careBody2: `Although cashmere is more well known, alpaca wool also belongs 
+  alpacaBody2: `Although cashmere is more well known, alpaca wool also belongs 
               to a select group of fine and luxurious fibers. Wearing alpaca 
               isn't just fashion statement... it's an experience.`,
 
-  careBody3: `What makes it so unique and special? Alpaca wool is the 
+  alpacaBody3: `What makes it so unique and special? Alpaca wool is the 
               natural result of the environment of the alpaca's habitat in 
               The Peruvian Andes (over 4000 meters above sea level). Where 
               the icey temperatures live in harmony with sunny days, nature 
               itself has created the perfect wool formula: warm, soft and 
               cozy, combined with the best sun protection and excellent 
               texture. You will be wearing something which back in ancient 
-              times was only accessible to kings and queens. Tradition 
-              reaching modern times in a unique way.`,
+              times was only accessible to kings and queens.`,
 
-  careBody4: `The alpaca comes from the South American Andes, like the 
+  alpacaBody4: `The alpaca comes from the South American Andes, like the 
               llamas and vicuñas.`,
 
-  careBody5: `The domestication of alpacas began about 3,000 years ago in 
+  alpacaBody5: `The domestication of alpacas began about 3,000 years ago in 
               the Andean highlands. During the ancient rule of the Inca 
               Empire, alpaca wool was considered the "fiber of the gods".`,
 
-  careBody6: `Alpacas are intelligent, curious, sensitive and known cautious 
+  alpacaBody6: `Alpacas are intelligent, curious, sensitive and known cautious 
               animals (you could even call them shy). Basically, alpacas are 
               divided into 2 groups: the Suri alpaca (a typical feature of 
               them is their wonderful, soft, curly wool) and the Huacaya
                alpaka (with their consistent fibers). These 2 groups 
                represent the majority of the alpaca population.`,
 
-  careBody7: `Alpacas are social herd animals and require very little pasture 
+  alpacaBody7: `Alpacas are social herd animals and require very little pasture 
               land - making them a very environmentally friendly and safe 
               wool producer.`,
+
+  careHeadline: "CARE AND STORAGE",
+
+  careList1: "Alpaca wool is:",
+  careList1_1: "Warm and Light",
+  careList1_2: "Hypoallergenic",
+  careList1_3: "Soft and silky to the touch",
+  careList1_4: "Comfortable and versatile to wear",
+  careList1_5: "Available in different colors",
+
+  aboutWool: `Alpaca wool is high quality and needs to be treated 
+                correspondingly. Here are a few general pointers:`,
+
+  careList2: "Hand Wash",
+  careList2_1: `Wash carefully by hand in cool water (up to 19 ° C) with 
+                a mild detergent.`,
+  careList2_2: "Do not use bleach containing chlorine.",
+  careList2_3: `Lay flat to dry and pull out the original shape before 
+                it dries. Smooth the wet garment by hand to remove wrinkles. 
+                Also smooth out the seams and panels.`,
+
+  careList3: "Chemical/Dry Cleaning",
+  careList3_1: "Find a high quality dry cleaner.",
+  careList3_2: "Inform the cleaning staff that it is alpaca wool.",
+
+  careList4: "Machine Washing",
+  careList4_1: `Wash with a mild detergent at a cool temperature (19 ° C) 
+                on a delicate or wool cycle.`,
+  careList4_2: "Never use bleach.",
+  careList4_3: "Hang or lay flat to dry.",
+
+  careList5: "Storage",
+  careList5_1: "It is recommended to store folded, not hanging.",
+  careList5_2: "Regular moth-control can be used.",
+
+  // checkout
+  checkoutFineprint_1: `[1] Applies to deliveries within Germany. See 
+                        Ordering and Payment for delivery times for other 
+                        countries and information on calculation of delivery 
+                        dates.`,
+
+  checkoutFineprint_2: `[2] No sales tax is charged in accordance with 
+                        Section 19 (1) of the UStG.`,
 
   // contact form
   contactForm: "CONTACT US",
@@ -117,16 +159,6 @@ const en = {
   emailRequired: "Email is required",
   emailInvalid: "Email is invalid",
   messageRequired: "Message is required",
-
-  // sidebar
-  shop: "SHOP",
-  about: "ABOUT US",
-  care: "ALPACA WOOL & CARE",
-  contact: "CONTACT",
-
-  // not found page
-  toHome: "TO HOME",
-  notFound: "Sorry, we can't find the page you're looking for.",
 
   // footer
   legal: "LEGAL",
@@ -148,16 +180,20 @@ const en = {
 
   madeWithLove: "Made with 💗 by ",
 
-  // checkout
-  checkoutFineprint_1: `[1] Applies to deliveries within Germany. See 
-                        Ordering and Payment for delivery times for other 
-                        countries and information on calculation of delivery 
-                        dates.`,
+  // not found page
+  toHome: "TO HOME",
+  notFound: "Sorry, we can't find the page you're looking for.",
 
-  checkoutFineprint_2: `[2] No sales tax is charged in accordance with 
-                        Section 19 (1) of the UStG.`,
+  // shop page
+  addToCartLabel: "ADD TO CART",
+  
+  // sidebar
+  shop: "SHOP",
+  about: "ABOUT US",
+  care: "ALPACA WOOL & CARE",
+  contact: "CONTACT",
 
-  // >>>> MISC <<<<
+  // text container
   returnToTopButtonText: "Return to top",
 };
 

@@ -8,6 +8,7 @@ import { GlobalStyle } from "./global.styles";
 import LanguageSelectorModal from "./components/language-selector-modal/language-selector-modal.component";
 
 import HomePage from "./pages/home/home.component";
+import ShopPage from "./pages/shop/shop.component";
 import AboutPage from "./pages/about/about.component";
 import NotFoundPage from "./pages/not-found/not-found.component";
 import TermsAndCondsPage from "./pages/terms-and-conds/terms-and-conds.component";
@@ -34,6 +35,7 @@ const App = () => {
       <GlobalStyle />
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route exact path="/shop" component={ShopPage} />
         <Route exact path="/about" component={AboutPage} />
         <Route exact path="/agb" component={TermsAndCondsPage} />
         <Route exact path="/impressum" component={ImpressumPage} />
