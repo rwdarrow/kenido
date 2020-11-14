@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { createStructuredSelector } from "reselect";
+import { selectCartItemsCount } from '../../redux/cart/cart.selectors'
 import { BrowserView, MobileOnlyView } from "react-device-detect";
 
 import { connect } from "react-redux";
@@ -88,8 +90,12 @@ Header.propTypes = {
   playAnimation: PropTypes.bool,
 };
 
+const mapStateToProps = () => createStructuredSelector({
+  itemCount: selectCartItemsCount
+})
+
 const mapDispatchToProps = (dispatch) => ({
   toggleSidebarHidden: () => dispatch(toggleSidebarHidden()),
 });
 
-export default connect(null, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

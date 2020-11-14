@@ -33,3 +33,12 @@ export const fetchCollectionsStartAsync = () => {
       .catch((error) => dispatch(fetchCollectionsFailure(error.message)));
   };
 };
+
+export const showProductDetailsModal = (item) => ({
+  type: ShopActionTypes.SHOW_PRODUCT_DETAILS_MODAL,
+  payload: item,
+});
+
+export const hideProductDetailsModal = () => ({
+  type: ShopActionTypes.HIDE_PRODUCT_DETAILS_MODAL,
+});

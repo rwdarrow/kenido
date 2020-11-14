@@ -187,8 +187,14 @@ const de = {
   toHome: "ZUR HOMEPAGE",
   notFound: "Sorry, wir können die gesuchte Seite nicht finden.",
 
+  // product details modal
+  addToCart: "IN DEN WARENKORB",
+  soldOut: "AUSVERKAUFT",
+
   // shop page
   addToCartLabel: "IN DEN WARENKORB",
+  available: "Verfügbar",
+  unavailable: "Nicht Verfügbar",
 
   // sidebar
   shop: "SHOP",

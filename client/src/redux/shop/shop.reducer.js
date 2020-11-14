@@ -25,6 +25,17 @@ const shopReducer = (state = INITIAL_STATE, action) => {
         isFetching: false,
         errorMessage: action.payload,
       };
+    case ShopActionTypes.SHOW_PRODUCT_DETAILS_MODAL:
+      return {
+        ...state,
+        isModalShowing: true,
+        modalItemToShow: action.payload,
+      };
+    case ShopActionTypes.HIDE_PRODUCT_DETAILS_MODAL:
+      return {
+        ...state,
+        isModalShowing: false,
+      };
     default:
       return state;
   }

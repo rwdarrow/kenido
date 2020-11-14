@@ -7,6 +7,6 @@ export const SeparatorContainer = styled.hr`
   border-style: solid;
   background-color: white;
   height: 2px;
-  width: 90%;
-  margin: 30px;
+  width: 100%;
+  margin-top: 30px;
 `;

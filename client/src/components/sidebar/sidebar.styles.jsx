@@ -29,17 +29,9 @@ export const CloseButton = styled(Close)`
   cursor: pointer;
   background-color: transparent;
   cursor: pointer;
-  transition: all 300ms ease-in-out;
-
-  &:hover {
-    color: black;
-  }
 
   @media only screen and (max-width: 600px) {
     width: 10vw;
-
-    &:hover {
-    }
   }
 `;
 

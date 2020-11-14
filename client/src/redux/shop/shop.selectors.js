@@ -22,3 +22,13 @@ export const selectIsCollectionsLoaded = createSelector(
   [selectShop],
   shop => !!shop.collections // !! evaluates any value (including objects) to truthy or falsy
 )
+
+export const selectModalItemToShow = createSelector(
+  [selectShop],
+  (shop) => shop.modalItemToShow
+)
+
+export const selectIsModalShowing = createSelector(
+  [selectShop],
+  (shop) => shop.isModalShowing
+)

@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import { PropTypes } from "prop-types";
-import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
 
 import { LanguageContext } from "../../containers/language";
+import { showProductDetailsModal } from "../../redux/shop/shop.actions";
 
 import {
   ProductPreviewContainer,
@@ -12,7 +13,7 @@ import {
   SaleContainer,
 } from "./product-preview.styles";
 
-const ProductPreview = ({ item, history }) => {
+const ProductPreview = ({ item, showModal }) => {
   const { name, price, imageUrls, sale } = item;
 
   const languageContext = useContext(LanguageContext);
@@ -30,7 +31,7 @@ const ProductPreview = ({ item, history }) => {
         }).format(price);
 
   return (
-    <ProductPreviewContainer>
+    <ProductPreviewContainer onClick={() => showModal(item)}>
       {sale && <SaleContainer>SALE</SaleContainer>}
       <ImageContainer style={{ backgroundImage: `url(${imageUrls[0]})` }} />
       <PreviewFooter>
@@ -48,6 +49,11 @@ const ProductPreview = ({ item, history }) => {
 
 ProductPreview.propTypes = {
   item: PropTypes.object.isRequired,
+  showModal: PropTypes.func.isRequired,
 };
 
-export default withRouter(ProductPreview);
+const mapDispatchToProps = (dispatch) => ({
+  showModal: (item) => dispatch(showProductDetailsModal(item)),
+});
+
+export default connect(null, mapDispatchToProps)(ProductPreview);

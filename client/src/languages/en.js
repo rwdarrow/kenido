@@ -184,8 +184,14 @@ const en = {
   toHome: "TO HOME",
   notFound: "Sorry, we can't find the page you're looking for.",
 
+  // product details modal
+  addToCart: "ADD TO CART",
+	soldOut: "SOLD OUT",
+
   // shop page
   addToCartLabel: "ADD TO CART",
+  available: "Available",
+  unavailable: "Unavailable",
   
   // sidebar
   shop: "SHOP",
