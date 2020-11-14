@@ -88,6 +88,7 @@ const ProductDetailsModal = ({ isModalShowing, hideModal, item, addItem }) => {
     setClasses(
       Object.assign({}, transform, {
         transform: imgZoomed ? "scale(3.0)" : "scale(1.0)",
+        cursor: imgZoomed ? "zoom-out" : "zoom-in",
         transition: "transform .1s ease-out",
       })
     );
